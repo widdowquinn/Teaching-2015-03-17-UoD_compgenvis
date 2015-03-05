@@ -52,3 +52,15 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# LaTeX intermediate files
+presentation/*.aux
+presentation/*.nav
+presentation/*.out
+presentation/*.pdf
+presentation/*.snm
+presentation/*.synctex.gz
+presentation/*.toc
+
+# Emacs temp files
+*~
