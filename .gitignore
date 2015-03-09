@@ -64,3 +64,6 @@ presentation/*.toc
 
 # Emacs temp files
 *~
+
+# Mac-specific files
+.DS_Store
