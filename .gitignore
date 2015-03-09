@@ -75,3 +75,6 @@ presentation/*.toc
 exercises/all_chromosomes.pdf
 exercises/example.png
 exercises/activity.pdf
+
+# Don't give away shinyapps.io secrets
+shiny/nucleotide_frequencies/shinyapps
