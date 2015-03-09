@@ -29,3 +29,53 @@
     }
   }
 \end{frame}
+
+%
+\begin{frame}
+  \frametitle{Nucleotide frequency/genome size}
+  Very easy to calculate from complete or draft genome sequence \\
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/python_gc} \\
+  \end{center}  
+  GC content, chromosome size can be characteristic of an organism.
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Blobology
+  \footnote{\tiny{\href{http://dx.doi.org/10.1007/s13199-012-0154-6
+}{Kumar \& Blaxter (2011) \textit{Symbiosis} doi:10.1007/s13199-012-0154-6
+}}}
+  \footnote{\tiny{\href{http://nematodes.org/bioinformatics/blobology/
+}{http://nematodes.org/bioinformatics/blobology/
+}}}  
+  }
+  Sequence data can be contaminated by other organisms
+  \begin{itemize}
+    \item \textcolor{hutton_green}{Host and symbiont DNA have different \%GC}
+    \item \textcolor{hutton_green}{Host and symbiont DNA differ in coverage}
+  \end{itemize}
+  \begin{columns}[T] 
+    \column{.6\textwidth} 
+      \begin{itemize}
+        \item \textcolor{RawSienna}{Assemble genome}
+        \item \textcolor{hutton_blue}{Map reads}
+        \item \textcolor{hutton_purple}{Plot coverage against \%GC}
+      \end{itemize}
+    \column{.4\textwidth}
+      \includegraphics[width=\textwidth]{images/blobology}
+  \end{columns}    
+\end{frame}
+
+\begin{frame}
+  \frametitle{Nucleotide $k$-mers}
+  Sequence data is necessary to determine $k$-mers/frequencies
+  \begin{itemize}
+    \item \textcolor{hutton_green}{Nucleotides, $k=1$, 4x1-mers} \\
+      \url{A, C, G, T}
+    \item \textcolor{hutton_blue}{Dinucleotides, $k=2$, 16x2-mers} \\
+      \url{AA, AC, AG, AT, CA, CC, CG, CT, GA, GC, GG, GT, TA, TC, TG, TT}
+    \item \textcolor{RawSienna}{Triucleotides, $k=1$, 64x3-mers}
+    \item \textcolor{hutton_purple}{$k$-nucleotides, $4^k$x$k$-mers}
+  \end{itemize}  
+\end{frame}
