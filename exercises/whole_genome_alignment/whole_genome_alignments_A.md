@@ -191,16 +191,16 @@ The graph is easy to interpret but however, a quick look at the output files wit
 
 ```
 # Raw NUCmer output
-$ head output/E_coli_nucmer.delta
+$ head wga_output/E_coli_nucmer.delta
 
 # Filtered NUCmer output (used for plotting)
-$ head output/E_coli_nucmer.filter
+$ head wga_output/E_coli_nucmer.filter
 
 # show-coords output
-$ head output/E_coli_nucmer.coords
+$ head wga_output/E_coli_nucmer.coords
 
 # show-aligns output
-$ head -n 20 output/E_coli_nucmer.aligns
+$ head -n 20 wga_output/E_coli_nucmer.aligns
 ```
 
 **ACTIVITY 3:** Generate a visualisation of the `E_coli_nucmer.delta` output file, using `mummerplot`. Compare this with the plots generated from the `E_coli_mummer.mums` and `E_coli_nucmer.filter` output, and comment on the differences.
