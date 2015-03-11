@@ -67,3 +67,33 @@
     \item \textcolor{hutton_purple}{TETRA = Pearson correlation coefficient of Z-scores}
   \end{enumerate}
 \end{frame}
+
+%
+\begin{frame}
+  \frametitle{Bulk genome comparisons}
+  \Large{
+    \textcolor{hutton_blue}{
+      \textbf{
+      EXERCISE 3: \\
+      \url{ex03_ani.ipynb}
+      }
+    }
+  }
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Average Nucleotide Identity (ANI)}
+  \textcolor{hutton_green}{ANIb vs ANIm}
+  \begin{itemize}
+    \item ANIb can split matching regions into two non-matching regions
+    \item ANIb may discard useful information that ANIm retains
+    \item ANIb may be prone to false negatives (saying two sequences are different species when they are not)
+  \end{itemize}
+  \textcolor{hutton_blue}{ANIb/ANIm vs TETRA}
+  \begin{itemize}
+    \item ANIb/ANIm reflect sequence matching (analogous to hybridisation)
+    \item TETRA reflects statistical deviation of a bulk genome measure (4-mer frequency)
+    \item TETRA may be prone to false positives (saying two sequences are the same species when they are not)
+  \end{itemize}  
+\end{frame}
