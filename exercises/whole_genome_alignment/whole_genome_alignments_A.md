@@ -25,11 +25,11 @@ To begin with, we'll compare the *E. coli* O157:H7 Sakai chromosome (`NC_002695.
 
 ### Check we're in the correct directory
 
-We should check that we're working in the current directory, using the `pwd` command. This should give a directory ending in `Teaching/2014-03-07_University_of_Dundee` (the precise location will depend on where you cloned the repository to):
+We should check that we're working in the current directory, using the `pwd` command. This should give a directory ending in `exercises/whole_genome_alignment` (the precise location will depend on where you cloned the repository to):
 
 ```
 $ pwd
-[...]/Teaching/2014-03-07_University_of_Dundee/whole_genome_alignment
+[...]/exercises/whole_genome_alignment
 ```
 
 If this is not the case, change to that directory now, or adapt the commands below, accordingly. 
