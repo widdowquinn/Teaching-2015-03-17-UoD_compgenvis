@@ -72,3 +72,70 @@
   \textcolor{hutton_green}{\textbf{ADVANTAGES}: fast, exact exon bounds, UCSC integration}
   \textcolor{RawSienna}{\textbf{DISADVANTAGES}: less sensitive on remote/divergent sequences}
 \end{frame}
+
+%
+\begin{frame}
+  \frametitle{megaBLAST
+  \footnote{\tiny{Zhang \textit{et al.} (2000) \textit{J. Comp. Biol.} \textbf{7}(1-2): 203-214
+}}
+  \footnote{\tiny{Korf \textit{et al.} (2003) \textit{BLAST} O'Reilly \& Associates, Sebastopol, CA
+}}
+  }
+  Optimised for {\small(see \href{http://www.ncbi.nlm.nih.gov/blast/Why.shtml}{http://www.ncbi.nlm.nih.gov/blast/Why.shtml})}:
+  \begin{itemize}
+    \item \textcolor{hutton_green}{speed and genome-level searching}
+    \item \textcolor{hutton_blue}{queries on large sequence sets}: "query-packing"
+    \item \textcolor{hutton_purple}{long alignments of very similar sequences} (\url{dc-megablast} for divergent sequences)
+  \end{itemize}
+  Uses Zhang et al. greedy algorithm, \textbf{not BLAST algorithm} \\
+  \textcolor{RawSienna}{BLASTN+ defaults to megaBLAST algorithm}
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{MUMmer
+  \footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12
+}{Kurtz \textit{et al.} (2004) \textit{Genome Biol.} doi:10.1186/gb-2004-5-2-r12
+}}}
+  }
+  Conceptually completely different to BLAST/BLAT/megaBLAST \\
+  \textcolor{RawSienna}{Uses \textit{suffix trees} for pattern matching}
+  \begin{itemize}
+    \item \textcolor{hutton_green}{Finds maximal exact matches}
+    \item \textcolor{hutton_blue}{Memory use depends only on reference sequence size}
+  \end{itemize}
+  \begin{columns}[T] 
+    \column{.5\textwidth} 
+      \textcolor{hutton_purple}{Suffix Tree:}
+      \begin{itemize}
+        \item Constructed and searched in $O(n)$ time
+        \item Useful algorithms are nontrivial
+        \item \url{BANANAS$}
+      \end{itemize}
+    \column{.5\textwidth}
+      \includegraphics[width=0.75\textwidth]{images/suffix_tree}
+  \end{columns}    
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{MUMmer
+  \footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12
+}{Kurtz \textit{et al.} (2004) \textit{Genome Biol.} doi:10.1186/gb-2004-5-2-r12
+}}}
+  }
+  \textcolor{RawSienna}{Process:}
+  \begin{enumerate}
+    \item \textcolor{hutton_green}{Identify non-overlapping set of maximal exact matches (MUMs: \textit{maximal unique matches})}
+    \item \textcolor{hutton_blue}{Cluster MUMs into \textit{alignment anchors}}
+    \item \textcolor{hutton_purple}{Extend between anchors to produce final (gapped) alignment}    
+  \end{enumerate}
+  \textcolor{RawSienna}{The approach is very flexible}
+  \begin{enumerate}
+    \item Used in a suite of programs (\url{mummer}, \url{nucmer}, \url{promer}, $\ldots$)
+    \item Nucleotide and "conceptual protein" (sensitive!) alignments
+    \item Used for comparisons, scaffolding, repeat detection
+    \item Basis of other aligners and assemblers, (\url{Mugsy}, \url{AMOS}, $\ldots$)
+  \end{enumerate}
+  
+\end{frame}
