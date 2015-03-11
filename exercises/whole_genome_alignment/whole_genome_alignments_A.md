@@ -302,10 +302,10 @@ In fact, this region is genomic island GI28, as described in [Roos & van Passel 
 
 As noted above **MUMmer** (and `nucmer`) output can be complex, but it is possible to generate human-readable output from this complex output. However, the files produced by e.g. `show-coords` are not directly readable by **ACT**. This is a common issue with genome comparisons, as applications produce many different types of data, and there are few standards in the field.
 
-The `.crunch` tabular file accepted by **ACT** is simple, and can be generated from the output of **MUMmer**'s `show-coords` package. The script `nucmer_to_crunch.py` in the `scripts` subdirectory can do this for you. To use it on the `nucmer` output you generated above, run the following at the command-line:
+The `.crunch` tabular file accepted by **ACT** is simple, and can be generated from the output of **MUMmer**'s `show-coords` package. The script `nucmer_to_crunch.py` the current directory can do this for you. To use it on the `nucmer` output you generated above, run the following at the command-line:
 
 ```
-$ python ../scripts/nucmer_to_crunch.py -i wga_output/E_coli_nucmer.coords -o wga_output/E_coli_nucmer.crunch -v
+$ python nucmer_to_crunch.py -i wga_output/E_coli_nucmer.coords -o wga_output/E_coli_nucmer.crunch -v
 ```
 
 and then proceed as above, to load in the same genome sequences as before, but replacing the **BLAST** alignment data with that from the `nucmer` alignment. Your file selection dialogue should resemble that below:
