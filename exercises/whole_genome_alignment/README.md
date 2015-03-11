@@ -13,6 +13,7 @@ The exercises were written and tested using the following software, but other ve
 
 * **BLAST+** 2.2.29+ <ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/>
 * legacy **BLAST** 2.2.26 <ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/>
-* **MUMMer** 3.0 <http://mummer.sourceforge.net/>
+* **MUMMer** 3.0, 3.5 <http://mummer.sourceforge.net/>
+* **GNUPlot** 4.6.6 (note: 5.0 does not work with `mummerplot`)
 * **ACT** 13.0.0 <http://www.sanger.ac.uk/resources/software/act/>
 * **Mauve** 2.3.1 <http://asap.ahabs.wisc.edu/mauve/download.php>
