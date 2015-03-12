@@ -66,7 +66,7 @@
   \begin{itemize}
     \item optimised to find \textcolor{hutton_purple}{only exact or near-exact matches} (speed)
     \item indexes the subject genome, and \textcolor{hutton_purple}{\textit{scans the query}}
-    \item connects homologous match regions into a single alignment (BLAST reports separately)
+    \item connects homologous match regions into a single alignment (BLAST reports these separately)
     \item reports mRNA match intron-exon bounds exactly (BLAST tends to extend beyond bounds)
   \end{itemize}
   \textcolor{hutton_green}{\textbf{ADVANTAGES}: fast, exact exon bounds, UCSC integration}
@@ -81,14 +81,15 @@
   \footnote{\tiny{Korf \textit{et al.} (2003) \textit{BLAST} O'Reilly \& Associates, Sebastopol, CA
 }}
   }
-  Optimised for {\small(see \href{http://www.ncbi.nlm.nih.gov/blast/Why.shtml}{http://www.ncbi.nlm.nih.gov/blast/Why.shtml})}:
+  Optimised for:
   \begin{itemize}
     \item \textcolor{hutton_green}{speed and genome-level searching}
     \item \textcolor{hutton_blue}{queries on large sequence sets}: "query-packing"
     \item \textcolor{hutton_purple}{long alignments of very similar sequences} (\url{dc-megablast} for divergent sequences)
   \end{itemize}
-  Uses Zhang et al. greedy algorithm, \textbf{not BLAST algorithm} \\
-  \textcolor{RawSienna}{BLASTN+ defaults to megaBLAST algorithm}
+  Uses Zhang et al. greedy algorithm, \textbf{not BLAST algorithm} \\~\\
+  \textcolor{RawSienna}{BLASTN+ defaults to megaBLAST algorithm} \\
+  (see \href{http://www.ncbi.nlm.nih.gov/blast/Why.shtml}{http://www.ncbi.nlm.nih.gov/blast/Why.shtml})
 \end{frame}
 
 %
@@ -110,7 +111,7 @@
       \begin{itemize}
         \item Constructed and searched in $O(n)$ time
         \item Useful algorithms are nontrivial
-        \item \url{BANANAS$}
+        \item \url{BANANA$}
       \end{itemize}
     \column{.5\textwidth}
       \includegraphics[width=0.75\textwidth]{images/suffix_tree}
