@@ -119,3 +119,71 @@
       \end{center}
   \end{columns}    
 \end{frame}
+
+%
+\begin{frame}
+  \frametitle{MAUVE
+  \footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704
+}{Darling \textit{et al.} (2003) \textit{Genome Res.} doi:10.1101/gr.2289704
+}}}
+  }
+  MAUVE/Progressive MAUVE: \href{http://gel.ahabs.wisc.edu/mauve/}{http://gel.ahabs.wisc.edu/mauve/} \\
+  \begin{columns}[T] 
+    \column{.55\textwidth} 
+      \textcolor{RawSienna}{Algorithm:}
+      \begin{enumerate}
+        \item \textcolor{hutton_green}{Find local alignments (\textit{multi-MUMs}, A)}
+        \item Build guide tree from multi-MUMs
+        \item \textcolor{hutton_blue}{Select subset of multi-MUMs (\textit{anchors}, B)}
+        \begin{itemize}
+          \item Partition into \textit{local collinear blocks} (LCBs)
+        \end{itemize}
+        \item \textcolor{hutton_purple}{Recursive anchoring to refine anchors (C)}
+        \item Progressive alignment against guide tree
+      \end{enumerate}
+    \column{.45\textwidth}
+      \includegraphics[width=0.9\textwidth]{images/mauve_method}
+  \end{columns}    
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{MAUVE
+  \footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704
+}{Darling \textit{et al.} (2003) \textit{Genome Res.} doi:10.1101/gr.2289704
+}}}
+  }
+  MAUVE alignment of LCBs in nine enterobacterial genomes \\
+  \textcolor{hutton_green}{Evidence for rearrangement of homologous backbone sequence}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{images/mauve_entero}
+  \end{center}    
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Draft genome alignment}
+  \textcolor{olive}{High-throughput genome assemblies may be fragments (contigs)} \\
+  Contigs can be ordered (\textit{scaffolded}):
+  \begin{itemize}
+    \item \textcolor{hutton_blue}{without alignment}, by long or paired-end reads
+    \item \textcolor{hutton_purple}{by alignment}, to complete \textit{reference} genomes
+    \item \textcolor{hutton_purple}{by alignment}, to other draft incomplete genomes
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/mauve_scaffolding}
+  \end{center}    
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Draft genome alignment}
+  Alignment-based scaffolding:
+  \begin{itemize}
+    \item \textcolor{hutton_blue}{MUMmer}: \texttt{nucmer}, or \texttt{promer} (if divergent)
+    \item \textcolor{hutton_purple}{MAUVE/Progressive MAUVE}: Mauve Contig Mover (MCM)
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/mauve_scaffolding}
+  \end{center}    
+\end{frame}
