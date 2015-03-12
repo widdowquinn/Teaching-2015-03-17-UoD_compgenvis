@@ -20,11 +20,11 @@ When you have completed this activity you should be able
 
 ### Check we're in the correct directory
 
-We should check that we're working in the current directory, using the `pwd` command. This should give a directory ending in `Teaching/2014-03-07_University_of_Dundee` (the precise location will depend on where you cloned the repository to):
+We should check that we're working in the current directory, using the `pwd` command. This should give a directory ending in `exercises/whole_genome_alignment` (the precise location will depend on where you cloned the repository to):
 
 ```
 $ pwd
-[...]/Teaching/2014-03-07_University_of_Dundee/whole_genome_alignment
+[...]exercises/whole_genome_alignment
 ```
 
 If this is not the case, change to that directory now, or adapt the commands below, accordingly. 
@@ -108,7 +108,7 @@ This view shows the (complete) `NC_014500` *Dickeya dadantii* genome in the top 
 
 On the bottom row, the draft genome contigs are indicated, with contig boundaries marked as red lines (i.e. the regions between consecutive red lines indicate individual contigs). By dragging the mouse/cursor along this bottom row, you should see the currently active contig IDs change in the status bar at the bottom (you will note that all the contigs remain in numerical order, and have not been moved). Blocks above the line are in the forward strand with respect to the input data, and those below the line are reversed with respect to the input.
 
-The thin lines linking LCBs are guides to the eye, so that rearrangements can be 
+The thin lines linking LCBs are guides to the eye, so that rearrangements can be seen quickly.
 
 This alignment produces four output files: 
 
