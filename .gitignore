@@ -80,6 +80,10 @@ exercises/ex03_ANIb/
 exercises/ex03_ANIm/
 exercises/ex03_TETRA/
 exercises/whole_genome_alignment/wga_output/
+exercises/example1.pdf
+exercises/example1.png
+exercises/example2.pdf
+exercises/example2.png
 
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps
