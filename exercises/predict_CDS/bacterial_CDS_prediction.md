@@ -1,4 +1,4 @@
-# README.md - predict_CDS
+# Predicting bacterial CDS features
 
 **NOTE:** Due to time constraints, this is an optional activity. The results of completing this activity should already be present, so that visualisation and analysis can proceed in later activities.
 
@@ -26,7 +26,7 @@ This activity was written and tested using the following software, though other 
 
 In our work, we found **Prodigal** to be the best of the bacterial gene-callers we tried, and it typically has near-100% 3' accuracy, and around 95% 5' accuracy on the genes it calls, using benchmark sets. On our data, we found that it had closer to 70-80% 5' accuracy, and 90-97% 3' accuracy. This was still better than the common alternatives we tried (including **RAST** <http://rast.nmpdr.org/>, **Glimmer** <http://ccb.jhu.edu/software/glimmer/index.shtml> and **GeneMark** <http://opal.biology.gatech.edu/>).
 
-There is, however, [no free lunch](http://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization), so you may wish to try and compare other genecallers.
+There is, however, [no free lunch](http://en.wikipedia.org/wiki/No_free_lunch_in_search_and_optimization), so for a real project, you may wish to try and compare other genecallers.
 
 In this activity, you will use **Prodigal** to annotate a complete bacterial genome sequence, and visualise the results.
 
@@ -38,7 +38,7 @@ Ensure that you are in the correct working directory:
 
 ```
 $ pwd
-[...]/Part_2/predict_CDS
+[...]/exercises/predict_CDS
 ```
 
 The subdirectory `data` contains the file `genome.fna`, which describes the chromosomal genome sequence of a bacterium.
