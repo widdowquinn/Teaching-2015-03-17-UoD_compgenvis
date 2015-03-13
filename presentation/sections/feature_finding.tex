@@ -1,0 +1,104 @@
+%% feature_finding.tex
+%% Author: Leighton Pritchard
+%% Copyright: James Hutton Institute
+%% Finding genome features
+
+%
+\begin{frame}
+  \frametitle{Gene finding
+  \footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.088997.108
+}{Liang \textit{et al.} (2009) \textit{Genome Res.} doi:10.1101/gr.088997.108
+}}}
+    \footnote{\tiny{\href{http://dx.doi.org/10.1038/nbt0807-883
+}{Brent (2007) \textit{Nat. Biotech.} doi:10.1038/nbt0807-883
+}}}
+    \footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2105-5-59
+}{Korf (2004) \textit{BMC Bioinf.} doi:10.1186/1471-2105-5-59
+}}}
+    }
+  \textcolor{hutton_green}{Empirical (evidence-based) methods:}
+  \begin{itemize}
+    \item Inference from known protein/cDNA/mRNA/EST sequence
+    \item Interference from mapped RNA reads (e.g. RNAseq)
+  \end{itemize}
+  \textcolor{hutton_blue}{\textit{Ab initio} methods:}
+  \begin{itemize}
+    \item Prediction on the basis of gene features (TSS, CpG islands, Shine-Dalgarno sequence, stop codons, nucleotide composition, etc.)
+  \end{itemize}
+  \textcolor{hutton_purple}{\textbf{Inference from genome comparisons/sequence conservation}}
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Regulatory element finding
+  \footnote{\tiny{\href{http://dx.doi.org/10.1186/1471-2105-12-238
+}{Zhang \textit{et al.} (2011) \textit{BMC Bioinf.} doi:10.1186/1471-2105-12-238
+}}}
+    \footnote{\tiny{\href{http://dx.doi.org/10.1093/nar/gkt1123
+}{Kilic \textit{et al.} (2013) \textit{Nucl. Acids Re.} doi:10.1093/nar/gkt1123
+}}}
+    \footnote{\tiny{\href{http://dx.doi.org/10.1016/j.gde.2005.05.002
+}{Vavouri \& Elgar (2005) \textit{Curr. Op. Genet. Deve.} doi:10.1016/j.gde.2005.05.002
+}}}
+    }
+  \textcolor{hutton_green}{Empirical (evidence-based) methods:}
+  \begin{itemize}
+    \item Inference from protein-DNA binding experiments
+    \item Interference from co-expression
+  \end{itemize}
+  \textcolor{hutton_blue}{\textit{Ab initio} methods:}
+  \begin{itemize}
+    \item Identification of regulatory motifs (profile/other methods; TATA, $\sigma$-factor binding sites, etc.)
+    \item Statistical overrepresentation of motifs
+    \item Identification from sequence properties
+  \end{itemize}
+  \textcolor{hutton_purple}{\textbf{Inference from genome comparisons/sequence conservation}}
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Multiple genome alignment}
+  \Large{
+    \textcolor{hutton_blue}{
+      \textbf{
+      EXERCISE 7: \\
+      {\small \href{https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/predict_CDS/bacterial_CDS_prediction.md}{\texttt{predict\_CDS/bacterial\_CDS\_prediction.md}}}
+      }
+    }
+  }
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Genecalling software}
+  \textcolor{hutton_green}{Many options for this, including$\ldots$}
+  \textcolor{hutton_blue}{Prokaryotes}
+  \begin{itemize}
+    \item Glimmer: {\tiny\href{http://ccb.jhu.edu/software/glimmer/index.shtml}{http://ccb.jhu.edu/software/glimmer/index.shtml}}
+    \item GeneMarkS: {\tiny\href{http://opal.biology.gatech.edu/}{http://opal.biology.gatech.edu/}}
+    \item RAST: {\tiny\href{http://rast.nmpdr.org/}{http://rast.nmpdr.org/}}
+    \item BASys: {\tiny\href{https://www.basys.ca/}{https://www.basys.ca/}}
+    \item \textbf{Prokka: {\tiny\href{http://www.vicbioinformatics.com/software.prokka.shtml}{http://}www.vicbioinformatics.com/software.prokka.shtml}}
+  \end{itemize}
+  \textcolor{hutton_purple}{Eukaryotes}
+  \begin{itemize}
+    \item GlimmerHMM: {\tiny\href{http://ccb.jhu.edu/software/glimmerhmm/}{http://ccb.jhu.edu/software/glimmerhmm/}}
+    \item GeneMarkES: {\tiny\href{http://opal.biology.gatech.edu/gmseuk.html}{http://opal.biology.gatech.edu/gmseuk.html}}
+    \item Augustus: {\tiny\href{http://augustus.gobics.de/}{http://augustus.gobics.de/}}
+    \item SNAP: {\tiny\href{http://korflab.ucdavis.edu/software.html}{http://korflab.ucdavis.edu/software.html}}
+  \end{itemize}
+\end{frame}
+
+%
+\begin{frame}
+  \frametitle{Feature identification}
+  \textcolor{hutton_green}{All prediction methods give you errors}
+  \begin{itemize}
+    \item \textbf{False positive}: predicts features where there are none
+    \item \textbf{False negative}: fails to predict a feature that is present
+    \item \textbf{Magnitude}: does not identify correct bounds on/value for feature
+    \item \textbf{Category}: predicts a feature to belong to the wrong class
+  \end{itemize}
+  \textcolor{hutton_blue}{All experiments have errors} \\~\\
+  \textcolor{hutton_purple}{\textbf{Genome comparisons can help correct for these errors}}
+\end{frame}
