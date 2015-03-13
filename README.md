@@ -1,8 +1,8 @@
-# README.md - Teaching-2015-03-17-UoD_compgenvis
+# README.md - Teaching-2015-03-UoD_compgenvis
 
 ## Overview
 
-This repository contains teaching materials used in delivering the first part of the 3rd year bioinformatics course lectures on "Comparative Genome Analysis and Visualisation" at the University of Dundee, 2015
+This repository contains teaching materials used in delivering the 3rd year bioinformatics course lectures on "Comparative Genome Analysis and Visualisation" at the University of Dundee, 2015
 
 ## Getting Started
 
