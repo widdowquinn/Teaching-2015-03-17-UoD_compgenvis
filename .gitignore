@@ -89,5 +89,11 @@ exercises/mcl_orthologues/data/*.crunch
 exercises/mcl_orthologues/data/all-vs-all.abc
 exercises/mcl_orthologues/data/out.seq.mci.I60
 exercises/mcl_orthologues/data/seq.*
+exercises/i-ADHoRe/gd_output/
+exercises/i-ADHoRe/genome_lists/
+exercises/i-ADHoRe/i-ADHoRe_config.ini
+exercises/i-ADHoRe/rbbh_input.tab
+exercises/i-ADHoRe/i-ADHoRe_activity/
+
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps
