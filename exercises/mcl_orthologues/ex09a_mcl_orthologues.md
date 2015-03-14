@@ -21,6 +21,17 @@ These activities were written and tested using the following software versions, 
 * **MCL** 12-135 <http://micans.org/mcl/>
 * **BLAST** 2.2.29+ <ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/>
 
+### Check we're in the correct directory
+
+We should check that we're working in the current directory, using the `pwd` command. This should give a directory ending in `exercises/mcl_orthologues` (the precise location will depend on where you cloned the repository to):
+
+```
+$ pwd
+[...]/exercises/mcl_orthologues
+```
+
+If this is not the case, change to that directory now, or adapt the commands below, accordingly.
+
 # 1. Perform MCL Clustering
 ## All-vs-All BLASTP
 
@@ -30,7 +41,7 @@ As we want an all-against-all comparison, we concatenate all protein sequences f
 
 In order to restrict the number of false positive associations between sequences, at the risk of failing to identify divergent pairs of sequences that are truly homologous, we're using an E-value cutoff of 1e-30.
 
-This process is described in the script file `run_BLAST.sh`, in this directory. The search takes a while so, to save time, it has been run for you already, and the output should already be in the `data` directory.
+This process is described in the script file `run_BLAST.sh`, in this directory. The search takes a while so, to save time, it has been run for you already, and the output file `all-v-all.tab` should already be in the `data` directory. If it is not, then running the `run_BLAST.sh` script should regenerate it.
 
 ## Create an `.abc` File
 
@@ -40,15 +51,21 @@ The `.abc` format contains three columns: `sequenceID1`, `sequenceID2`, `Evalue`
 $ cut -f 1,2,11 data/all-vs-all.tab > data/all-vs-all.abc
 ```
 
+You can inspect this file with 
+
+```
+head data/all-vs-all.abc
+```
+
 ## Create Initial Network
 
-Use the `mcxload` command to create the network file `seq.mci` and a corresponding dictionary file `seq.tab`, that will connect sequence identifiers with the values used internally by **MCL** in the network description.
+Use MCL's `mcxload` command to create the network file `seq.mci` and a corresponding dictionary file `seq.tab`. These files connect sequence identifiers with the values that will be used internally by **MCL** in the network description.
 
 ```
 $ mcxload -abc data/all-vs-all.abc --stream-mirror --stream-neg-log10 -stream-tf 'ceil(200)' -o data/seq.mci -write-tab data/seq.tab
 ```
 
-This command is converting the **BLAST** output to a long list of which sequences make BLAST matches to which other sequences, and with what E-value, converting that E-value by making it -log10(E-value). Space is also being saved by representing every sequence as an integer, and only storing the names once, in `seq.tab`.
+This command is converting the **BLAST** output to a long list of which sequences make BLAST matches to which other sequences, and with what E-value, converting that E-value by making it -log_10(E-value). Space is also being saved by representing every sequence as an integer, and only storing the names once, in `seq.tab`.
 
 ```
 $ head data/seq.*
@@ -77,15 +94,15 @@ begin
 9	gi|261820093|ref|YP_003258199.1|
 ```
 
-Technically, our **BLAST** data is now a graph, where each the first column of each line in `seq.mci` represents a node in the graph (identified by an integer), and the second column describes the edges and their corresponding weights, in `node:weight` pairs.
+Mathematically-speaking, our **BLAST** data has now been converted into a *graph*. The first column of each line in `seq.mci` represents a *node* in the graph (identified by an integer), and the second column describes the *edges* and their corresponding weights, in `node:weight` pairs.
 
-Some information is being lost, here. A **BLAST** match between two sequences A and B may not produce the same E-value when run in each direction. The `--stream-mirror` argument is assigning the "best" E-value as the edge weight between each pair of sequences. 
+Some information *is* being lost, here. A **BLAST** match between two sequences A and B may not produce the same E-value when run in each direction. The `--stream-mirror` argument is assigning the "best" (i.e. smallest) E-value as the edge weight between each pair of sequences. 
 
 ## Cluster the Network
 
-We will be using `mcl` to perform the clustering operation. This command takes a single argument to control the inflation value used in the algorithm. We will use one setting for example purposes though, in real use, you would want to ensure that clustering is robust for your chosen inflation value.
+We will be using `mcl` to perform the clustering operation. This command takes a single argument to control the inflation value used in the algorithm. We will use one setting for example purposes though, in real use, you would want to ensure that clustering is robust for your chosen inflation value by varying this setting, and seeing whether the output clusters change to a large, or small, degree.
 
-Here, we use an inflation value of 6, and generate the output file `out.seq.mci.I60`:
+Here, we use an inflation value of 6, and generate the output file `out.seq.mci.I60`, using the command:
 
 ```
 $ mcl data/seq.mci -I 6 -use-tab data/seq.tab -o data/out.seq.mci.I60
@@ -99,17 +116,19 @@ $ head data/out.seq.mci.I60
 
 In this output, each line represents a cluster of sequences, where the sequence IDs of members of the cluster are all given in tab-separated plain text format.
 
-### Process the cluster data
+### Process the cluster data: **break out into iPython**
 
-Please now use the `mcl_orthologues.ipynb` iPython notebook to process the **MCL** cluster output into `.crunch` output, so you can use **ACT** to compare clustering and RBBH output.
+Please now use the `ex09b_mcl_orthologues.ipynb` iPython notebook to process the **MCL** cluster output into `.crunch` output, so you can use **ACT** to compare clustering and RBBH output.
 
 Start the notebook by issuing:
 
 ```
-$ ipython notebook --pylab inline
+$ ipython notebook
 ```
 
 at the command-line, in the `mcl_orthologues` directory, and clicking on the notebook filename in your browser window.
+
+Once you have completed the exercise in the iPython notebook, continue from this point.
 
 # 2. Visualise MCL clustering output with ACT
 
@@ -118,13 +137,10 @@ After using the `mcl_orthologues.ipynb` notebook, you should have generated the 
 ```
 $ tree data
 data
-├── NC_004547.gbk
 ├── NC_004547_vs_NC_004547.crunch
-├── NC_010694.gbk
 ├── NC_010694_vs_NC_004547.crunch
 ├── NC_010694_vs_NC_010694.crunch
 ├── NC_010694_vs_NC_013421.crunch
-├── NC_013421.gbk
 ├── NC_013421_vs_NC_004547.crunch
 ├── NC_013421_vs_NC_013421.crunch
 ├── all-vs-all.abc
@@ -138,9 +154,9 @@ data
 └── seq.tab
 ```
 
-Now, using **ACT**, load the three GenBank files `NC_004547.gbk`, `NC_013421.gbk`, `NC_010694.gbk`, and the corresponding `.crunch` output:
+Now, using **ACT**, load the three GenBank files `../data/NC_004547.gbk`, `../data/NC_013421.gbk`, `../data/NC_010694.gbk`, and the corresponding `.crunch` output:
 
-**NOTE:** Be sure to use the files in the order shown: `NC_010694.gbk`, `NC_013421.gbk` and `NC_004547.gbk`, with the appropriate `.crunch` files.
+**NOTE:** Be sure to use the files in the order shown: `../data/NC_010694.gbk`, `../data/NC_013421.gbk` and `../data/NC_004547.gbk`, with the appropriate `.crunch` files.
 
 ![ACT file selection](images/act1.png?raw=True =300x)
 
@@ -148,7 +164,7 @@ This should give you output that resembles the image below. Note that by loading
 
 ![ACT comparison](images/act2.png?raw=True =400x)
 
-On zooming out, you should be able to see that the two *Pectobacterium* genomes (top and middle, in the image below) are, on the whole, more similar to each other than to the *Erwinia* genome, which is consistent with their taxoomic classification. There is also a large inversion in the *Pectobacterium* comparison.
+On zooming out, you should be able to see that the two *Pectobacterium* genomes (bottom and middle, in the image below) are, on the whole, more similar to each other than to the *Erwinia* genome, which is consistent with their taxoomic classification. There is also a large inversion in the *Pectobacterium* comparison.
 
 Both comparisons show some evidence of synteny, but the degree of rearrangement is much greater in the *Pectobacterium*:*Erwinia* comparison, than between the two *Pectobacterium* genomes.
 
@@ -156,9 +172,12 @@ Both comparisons show some evidence of synteny, but the degree of rearrangement 
 
 # 3. Visual comparison of MCL and RBBH orthologue predictions
 
-If you have completed the `find_rbbh` activity, you should by now have two alternative sets of orthologue predictions, which you can compare using **ACT**.
+If you have completed the `find_rbbh` activity, you should by now have two alternative sets of orthologue predictions, which you can compare using **ACT**, e.g. using
 
-Select the appropriate files for comparison (as shown below), and visualise the putative RBBH predictions:
+* MCL orthologue `.crunch` file in `data/NC_013421_vs_NC_004547.crunch`.
+* RBBH orthologue `.crunch` file in `../data/rbbh_output/NC_004547_vs_NC_013421.crunch`
+
+Select these files for comparison, and visualise the putative RBBH predictions:
 
 ![ACT file selection](images/act4.png?raw=True =200x)
 
@@ -168,6 +187,10 @@ Once you have zoomed out a little, and aligned the genomes, you should see an im
 
 The MCL predictions are at the top, and the RBBH predictions at the bottom. You should see that the overall agreement between the methods, especially regarding genome synteny and the rearrangment events, is good. However, the number of relationships identified by the RBBH method is fewer than that identified with MCL. On the whole, the MCL comparisons predictions seem to be "noisier", and contain more predictions where multiple sequences from the same genome contribute to a cluster.
 
-**ACTIVITY 1:** Are multiple-member clusters consistent with the concept of orthology? How does this affect interpretation of the MCL output? What advantages and disadvantages does the MCL clustering approach have with respect to RBBH for identifying protein family members and evolutionary relationships, and how are they evident in these comparisons? What else could you do to "tidy up" or improve the MCL orthologue-finding approach used in this activity?
+**ACTIVITY 1:** 
+
+* Are multiple-member clusters consistent with the concept of orthology? How does this affect interpretation of the MCL output? 
+* What advantages and disadvantages does the MCL clustering approach have with respect to RBBH for identifying protein family members and evolutionary relationships, and how are they evident in these comparisons? 
+* What else could you do to "tidy up" or improve the MCL orthologue-finding approach used in this activity?
 
 *HINT:* You may find it useful to zoom into the comparison image, and identify pairs of proteins that are in an MCL cluster, but do not make RBBH, and inspect the one-way BLAST output to make a judgement on whether they are likely to be related.
