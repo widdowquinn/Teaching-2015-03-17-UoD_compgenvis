@@ -36,6 +36,24 @@ $ ipython notebook
 
 at the command-line. It is possible to start iPython in other ways (e.g. in the terminal window, without inline plots, or using the Qt console), but this is the way the course examples/exercises were intended to be run.
 
+### Notebook/Markdown exercises
+
+The notebooks can be inspected online with the NBViewer and MarkDown links below
+
+* **ex01:** [%GC content and genome size](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex01_gc_content.ipynb)
+* **ex02:** [k-mer spectra](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex02_kmer_spectra.ipynb)
+* **ex03:** [average nucleotide identity (ANI)](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex03_ani.ipynb)
+* **ex04:** [pairwise genome alignment](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/whole_genome_alignment/whole_genome_alignments_A.md)
+* **ex05:** [multiple genome alignment](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/whole_genome_alignment/whole_genome_alignments_B.md)
+* **ex06:** [visualisation in Biopython](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex06_biopython_visualisation.ipynb)
+* **ex07:** [bacterial gene prediction](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/predict_CDS/bacterial_CDS_prediction.md)
+* **ex08:** [finding reciprocal best blast hits (RBBH)](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex08_find_rbbh.ipynb)
+* **ex09a:** [finding MCL orthologues (MarkDown)](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/mcl_orthologues/ex09a_mcl_orthologues.md)
+* **ex09b:** [finding MCL orthologues (iPython)](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/mcl_orthologues/ex09b_mcl_orthologues.ipynb)
+* **ex10a:** [finding synteny with i-ADHoRe](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/i-ADHoRe/ex10a_i-ADHoRe.md)
+* **ex10b:** [visualising synteny with i-ADHoRe](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/i-ADHoRe/ex10b_i-ADHoRe.ipynb)
+* **ex11:** [visualising the two-speed genome](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex11_pi_two_speed.ipynb)
+
 ## Licensing
 
 ### Presentation
