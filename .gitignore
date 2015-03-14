@@ -84,6 +84,7 @@ exercises/example1.pdf
 exercises/example1.png
 exercises/example2.pdf
 exercises/example2.png
+exercises/predict_CDS/data/predicted*
 
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps
