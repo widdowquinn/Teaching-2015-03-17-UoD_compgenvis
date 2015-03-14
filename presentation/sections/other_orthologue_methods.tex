@@ -1,0 +1,43 @@
+%% other_orthologue_methods.tex
+%% Author: Leighton Pritchard
+%% Copyright: James Hutton Institute
+%% Summary of other orthologue prediction methods
+
+% 
+\begin{frame}
+  \frametitle{Notes of caution}
+  \textcolor{hutton_green}{BLAST-based orthology methods are fast!} \\
+  $\ldots$but there are some drawbacks:
+  \begin{itemize}
+    \item No guarantee that sequence matches are transitive \\
+    (A may match B at a different domain that B matches C)
+    \item \textcolor{hutton_blue}{No evolutionary distance model}
+    \item \textcolor{hutton_purple}{Do not account for multiple domain matches}
+  \end{itemize}
+  Orthologues are proposed on the basis of sequence similarity, \textcolor{red}{\textbf{not predicted directly}}.
+\end{frame}
+
+% 
+\begin{frame}
+  \frametitle{Orthologue prediction methods}
+  \textcolor{hutton_green}{Homologene (NCBI): \textit{synteny}}
+  \begin{itemize}
+    \item \href{http://www.ncbi.nlm.nih.gov/homologene}{http://www.ncbi.nlm.nih.gov/homologene}
+  \end{itemize}
+  \textcolor{hutton_blue}{Mouse Genome Database (MGD): \textit{manual curation}}
+  \begin{itemize}
+    \item \href{http://www.informatics.jax.org/homology.shtml}{http://www.informatics.jax.org/homology.shtml}
+  \end{itemize}
+  \textcolor{RawSienna}{EnsembleCompara (EMBL-EBI): \textit{tree-based}}
+  \begin{itemize}
+    \item \href{http://www.ensembl.org/info/genome/compara/index.html}{http://www.ensembl.org/info/genome/compara/index.html}
+  \end{itemize}
+  \textcolor{olive}{TreeFam (EMBL-EBI): \textit{tree-based}}
+  \begin{itemize}
+    \item \href{http://www.treefam.org}{http://www.treefam.org}
+  \end{itemize}
+  \textcolor{hutton_purple}{OrthologID: \textit{tree-based}}
+  \begin{itemize}
+    \item \href{http://nypg.bio.nyu.edu/orthologid}{http://nypg.bio.nyu.edu/orthologid}
+  \end{itemize}
+\end{frame}
