@@ -85,6 +85,9 @@ exercises/example1.png
 exercises/example2.pdf
 exercises/example2.png
 exercises/predict_CDS/data/predicted*
-
+exercises/mcl_orthologues/data/*.crunch
+exercises/mcl_orthologues/data/all-vs-all.abc
+exercises/mcl_orthologues/data/out.seq.mci.I60
+exercises/mcl_orthologues/data/seq.*
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps
