@@ -19,8 +19,8 @@ datadir = "data/rbbh_output"
 
 # Function to read BLAST data
 def read_data(s1, s2):
-    """ Reads BLASTP tabular output data from the file corresponding
-        to passed accessions, returning a Pandas dataframe.
+    """Reads BLASTP tabular output data from the file corresponding
+    to passed accessions, returning a Pandas dataframe.
     """
     # We specify no index for these dataframes
     df = pd.DataFrame.from_csv(os.path.join(datadir, "%s_vs_%s.tab" % (s1, s2)),
@@ -32,9 +32,9 @@ def read_data(s1, s2):
     
 # Function to calculate query and subject coverage for a BLAST dataset
 def calculate_coverage(*df):
-    """ For the passed dataframe, calculates query and subject coverage,
-        and returns the original dataframe with two new columns,
-        query_coverage and subject_coverage.
+    """For the passed dataframe, calculates query and subject coverage,
+    and returns the original dataframe with two new columns,
+    query_coverage and subject_coverage.
     """
     for d in df:
         d['query_coverage'] = 100 * d.alignment_length/d.query_length
@@ -44,8 +44,8 @@ def calculate_coverage(*df):
 
 # Function to filter dataframe on percentage identity and coverage
 def filter_cov_id(pid, cov, *df):
-    """ Filters the passed dataframe, returning only rows that meet
-        passed percentage identity and coverage criteria.
+    """Filters the passed dataframe, returning only rows that meet
+    passed percentage identity and coverage criteria.
     """
     return tuple([d[(d.percentage_identity > pid) & (d.query_coverage > cov) &
                   (d.subject_coverage > cov)] for d in df])
@@ -53,8 +53,8 @@ def filter_cov_id(pid, cov, *df):
     
 # Function to filter dataframe to best HSP match only, for any query
 def filter_matches(*df):
-    """ Filters rows duplicated by query_id with a 
-        Pandas DataFrame method: drop_duplicates. By default, this
+    """Filters rows duplicated by query_id with a 
+    Pandas DataFrame method: drop_duplicates. By default, this
         keeps the first encountered row, which is also the "best"
         HSP in BLAST tabular output.
     """
@@ -62,17 +62,19 @@ def filter_matches(*df):
     
 # Function to parse the appropriate BLASTP data and return a dataframe of RBBH
 def find_rbbh(s1, s2, pid=0, cov=0):
-    """ Takes the accessions for two organisms, and 
-        1. parses the appropriate BLASTP output into two dataframes, and 
-           calculates coverage, discarding all but the "best" HSP, on the
-           basis of bitscore, where there are multiple HSPs for a hit.
-        2. cuts out rows that do not meet minimum percentage identity and
-           coverage criteria.
-        3. identifies RBBH from the remaining BLAST matches.
+    """Takes the accessions for two organisms, and 
+    1. parses the appropriate BLASTP output into two dataframes, and 
+       calculates coverage, discarding all but the "best" HSP, on the
+       basis of bitscore, where there are multiple HSPs for a hit.
+    2. cuts out rows that do not meet minimum percentage identity and
+       coverage criteria.
+    3. identifies RBBH from the remaining BLAST matches.
     """
     assert s1 != s2, "Accessions should not match! %s=%s" % (s1, s2)
-    assert 0 <= pid <= 100, "Percentage identity should be in [0,100], got %s" % str(pid)
-    assert 0 <= cov <= 100, "Minimum coverage should be in [0,100], got %s" % str(cov)
+    assert 0 <= pid <= 100, \
+        "Percentage identity should be in [0,100], got %s" % str(pid)
+    assert 0 <= cov <= 100, \
+        "Minimum coverage should be in [0,100], got %s" % str(cov)
     # Read in tabular BLAST output
     df1, df2 = read_data(s1, s2), read_data(s2, s1)
     # Filter to best HSP match only
@@ -83,18 +85,21 @@ def find_rbbh(s1, s2, pid=0, cov=0):
     df1, df2 = filter_cov_id(pid, cov, df1, df2)
     # Identify RBBH from the two datasets on the basis of matching query and 
     # subject sequence ID
-    matches = df1.merge(df2, left_on=("query_id", "subject_id"), right_on=("subject_id", "query_id"))
-    rbbh = matches[["query_id_x", "subject_id_x", "percentage_identity_x", "percentage_identity_y",
-                    "query_coverage_x", "query_coverage_y", "subject_coverage_x", "subject_coverage_y",
-                    "bitscore_x", "bitscore_y", "Evalue_x", "Evalue_y"]]
-    rbbh.to_csv(os.path.join(datadir, "rbbh_%s_vs_%s.tab" % (s1, s2)), sep='\t')
+    matches = df1.merge(df2, left_on=("query_id", "subject_id"),
+                        right_on=("subject_id", "query_id"))
+    rbbh = matches[["query_id_x", "subject_id_x", "percentage_identity_x",
+                    "percentage_identity_y", "query_coverage_x",
+                    "query_coverage_y", "subject_coverage_x",
+                    "subject_coverage_y", "bitscore_x", "bitscore_y",
+                    "Evalue_x", "Evalue_y"]]
+    rbbh.to_csv(os.path.join(datadir, "rbbh_%s_vs_%s.tab" % (s1, s2)),
+                sep='\t')
     return df1, df2, rbbh
 
 # Function to plot 2D histogram, with colorbar scale, from
 # two dataframe columns.
 def plot_hist2d(col1, col2, xlab="", ylab="", header="", bins=100):
-    """ Plots a 2D histogram of the two passed dataframe columns
-    """
+    """Plots a 2D histogram of the two passed dataframe columns."""
     fig = plt.figure()
     ax = fig.add_subplot(111)
     # How we render 2D histograms/heatmaps varies, dependent on the 
@@ -116,8 +121,8 @@ def plot_hist2d(col1, col2, xlab="", ylab="", header="", bins=100):
     
 # Function for scatterplot from two dataframe columns.
 def plot_scatter(col1, col2, xlab="", ylab="", header=""):
-    """ Plots a scatterplot of the two passed dataframe columns,
-        colouring points by y-axis value.
+    """Plots a scatterplot of the two passed dataframe columns,
+    colouring points by y-axis value.
     """
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -131,12 +136,12 @@ def plot_scatter(col1, col2, xlab="", ylab="", header=""):
 # keyed by protein ID, where the values are a tuple of (source, start, end, 
 # strand) information.
 def read_genbank(*filenames):
-    """ Returns a dictionary of CDS annotations, where the dictionary keys
-        are the CDS protein ID accession numbers, and the values are
-        (source, start, end, strand, id) information about the CDS location
-        on the chromosome.
+    """Returns a dictionary of CDS annotations, where the dictionary keys
+    are the CDS protein ID accession numbers, and the values are
+    (source, start, end, strand, id) information about the CDS location
+    on the chromosome.
         
-        - *filenames, the organism's GenBank annotation files
+    - *filenames, the organism's GenBank annotation files
     """
     ft_dict = {}
     for filename in filenames:
@@ -154,12 +159,14 @@ def read_genbank(*filenames):
 
 # Function to split a full sequence reference ID into only the last value
 def split_seqid(seqid):
+    """Split NCBI sequence ID to get last value."""
     if '|' not in seqid:
         return seqid
     return seqid.split('|')[-2]
 
 # Function to write a single line of a Pandas RBBH dataframe to file
 def write_line(line, features, fh):
+    """Write a single RBBH dataframe line to a file."""
     ft1 = features[split_seqid(line['query_id_x'])]
     ft2 = features[split_seqid(line['subject_id_x'])]
     fh.write(' '.join([str(line['bitscore_x']),
@@ -175,8 +182,8 @@ def write_line(line, features, fh):
 # Function to write .crunch output for ACT visualisation, from the
 # RBBH identified above
 def write_crunch(rbbh, features, outdir=".", filename="rbbh.crunch"):
-    """ Writes .crunch output in outdir, for those RBBH stored in the 
-        passed dataframe
+    """Writes .crunch output in outdir, for those RBBH stored in the 
+    passed dataframe
     """
     with open(os.path.join(outdir, filename), 'w') as fh:
         rbbh.apply(write_line, axis=1, args=(features, fh))
