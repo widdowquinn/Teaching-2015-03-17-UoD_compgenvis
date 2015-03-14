@@ -1,6 +1,4 @@
-# README.md - i-ADHoRe
-
-## Overview
+# ex10_i-ADHoRe - Finding synteny with i-ADHoRe
 
 ## Prerequisites
 
@@ -10,11 +8,11 @@ This activity was written and tested using the following software versions, thou
 
 # 1. Running i-ADHoRe
 
-In this activity, you will employ `i-ADHoRe` to identify genomic collinearity and synteny in the two *Pectobacterium* and *Erwinia* genomes that were used in the earlier exercises.
+In this activity, you will employ `i-ADHoRe` to identify genomic collinearity and synteny in the two *Pectobacterium* and *Erwinia* genomes that were used in earlier exercises.
 
 ## Generating the input files
 
-`i-ADHore` uses a configuration (`.ini`) file to describe program settings. This may be unfamiliar to you, but the approach has the advantages that settings are saved and recoverable/reusable, which is not always true for GUIs, or when parameters are set at the command-line. This is helpful for reproducible research. This configuration file needs to be generated.
+`i-ADHore` uses a configuration (`.ini`) file to describe program settings. This may be an unfamiliar approach to you, but it has advantages, such that settings are saved and recoverable and reusable, enabling *reproducibility* in science. This is not always true for GUIs, or when parameters are set at the command-line. This `.ini` configuration file needs to be generated.
 
 `i-ADHoRe` also requires a set of `.lst` files containing lists of genes, one file per genome, with strands indicated in the format:
 
@@ -25,13 +23,15 @@ gene3+
 ...
 ```
 
-and a file that lists the relationships between gene pairs. In this case, we are using RBBH, but that may not always be what you want. We do this by concatenating `find_rbbh` activity output into the file `data/rbbh_data.tab` and cutting out the first two colums with the command:
+and a file that lists the relationships between gene pairs. In this case, we are using RBBH, but that is not the only definition of relationships that can be useful. 
+
+We construct this file this by concatenating `find_rbbh` activity output into the file `data/rbbh_data.tab` and cutting out the first two colums with the command:
 
 ```
-$ cat ../find_rbbh/rbbh_output/NC_004547_vs_NC_010694.tab ../find_rbbh/rbbh_output/NC_004547_vs_NC_013421.tab | cut -f 1,2 > data/rbbh_data.tab
+$ cat ../data/rbbh_output/NC_004547_vs_NC_010694.tab ../data/rbbh_output/NC_004547_vs_NC_013421.tab | cut -f 1,2 > data/rbbh_data.tab
 ```
 
-This needs to be processed to use the correct feature locus tags, and the script `generate_config.py` is provided to do this, and to generate the i-ADHoRe config file. You should run this with:
+This then needs to be processed to use the correct feature locus tags. The Python script `generate_config.py` is provided to do this, and also to generate the i-ADHoRe config file. You should run this with:
 
 ```
 $ python generate_config.py
@@ -47,7 +47,7 @@ Now that the input and config files are written, `i-ADHoRe` can be run with the 
 $ i-adhore i-ADHoRe_config.ini
 ```
 
-This will take a few seconds, and will write a number of files to the directory `i-ADHoRe_activity`, including visualisations of the GHM for each alignment, e.g.
+This will take a few seconds, produce many lines of output in your terminal, and will write a number of files to the directory `i-ADHoRe_activity`, including visualisations of the GHM for each alignment, e.g.
 
 ![GHM visualisation for *Pectobacterium* comparison](images/pecto_ghm.png?raw=True =300x)
 
@@ -65,6 +65,12 @@ and `.svg` files for each of the multiplicons (i.e. regions of collinearity) ide
 
 As you will have seen above, `i-ADHoRe`'s output is thorough, but complex. Also, the default visualisations are not very user-friendly.
 
-Move on to the next stage of this activity, by running the `i-ADHoRe.ipynb` iPython notebook.
+Move on to the next stage of this activity, by running the `i-ADHoRe.ipynb` iPython notebook. Issue:
+
+```
+ipython notebook
+```
+
+in the current directory.
 
 

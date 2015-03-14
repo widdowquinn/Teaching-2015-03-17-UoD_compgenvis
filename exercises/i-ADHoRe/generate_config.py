@@ -38,7 +38,7 @@ parameters = ['output_path= i-ADHoRe_activity',
               'tandem_gap= 5']
 
 # directory containing GenBank files for analysis
-gbkdir = 'data'
+gbkdir = '../data'
 
 # accession numbers and file locations
 genbank_files = {'ECA': os.path.join(gbkdir, 'NC_004547.gbk'),
