@@ -25,6 +25,10 @@ The exercises and examples have been written, and are known to run, with the fol
 * **iPython (with pylab and matplotlib) 1.1.0**
 * **Biopython 1.63+**
 * **Pandas 0.13**
+* **i-ADHoRe-3.0.01**
+* **ncbi-blast-2.2.29+**
+* **blast-2.2.26**
+* **MUMmer3.23**
 
 ## Executing iPython notebooks
 
@@ -35,6 +39,10 @@ $ ipython notebook
 ```
 
 at the command-line. It is possible to start iPython in other ways (e.g. in the terminal window, without inline plots, or using the Qt console), but this is the way the course examples/exercises were intended to be run.
+
+It may be useful to revise some material from Peter Cock's Biopython workshop - the notes and exercises can be obtained from 
+
+* [https://github.com/peterjc/biopython_workshop](https://github.com/peterjc/biopython_workshop)
 
 ### Notebook/Markdown exercises
 
