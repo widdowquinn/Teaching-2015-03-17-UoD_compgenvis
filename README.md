@@ -22,7 +22,7 @@ The lecture is presented in a tutorial/workshop format, with interactive example
 The exercises and examples have been written, and are known to run, with the following software, but they may also run happily on other versions:
 
 * **Python 2.7**
-* **iPython (with pylab and matplotlib) 1.1.0**
+* **iPython (with pylab and matplotlib 1.4.3+) 1.1.0**
 * **Biopython 1.63+**
 * **Pandas 0.13**
 * **i-ADHoRe-3.0.01**
