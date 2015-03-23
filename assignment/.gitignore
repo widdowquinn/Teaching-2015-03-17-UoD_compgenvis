@@ -1,0 +1,8 @@
+faa/
+fna/
+gbk/
+gff/
+data/*.faa
+data/*.fna
+data/*.gbk
+data/*.gff
