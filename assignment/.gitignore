@@ -7,3 +7,8 @@ data/*.faa
 data/*.fna
 data/*.gbk
 data/*.gff
+
+# Assignment test output
+assignment_ANIb
+assignment_ANIm
+assignment_TETRA
