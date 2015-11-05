@@ -1,4 +1,4 @@
-# README.md - Teaching-UoD-Comparative-Genomics-Visualisation
+# README.md - Teaching-Dundee-BS32010
 
 ## Overview
 
