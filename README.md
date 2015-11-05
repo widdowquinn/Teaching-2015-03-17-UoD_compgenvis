@@ -1,4 +1,4 @@
-# README.md - Teaching-2015-03-UoD_compgenvis
+# README.md - Teaching-UoD-Comparative-Genomics-Visualisation
 
 ## Overview
 
