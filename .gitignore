@@ -55,11 +55,11 @@ target/
 
 # LaTeX intermediate files
 presentation/*.aux
+presentation/*.toc
 presentation/*.nav
 presentation/*.out
 presentation/*.snm
 presentation/*.synctex.gz
-lecture/*.toc
 lecture/*.aux
 lecture/*.nav
 lecture/*.out
