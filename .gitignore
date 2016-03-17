@@ -59,7 +59,13 @@ presentation/*.nav
 presentation/*.out
 presentation/*.snm
 presentation/*.synctex.gz
-presentation/*.toc
+lecture/*.toc
+lecture/*.aux
+lecture/*.nav
+lecture/*.out
+lecture/*.snm
+lecture/*.synctex.gz
+lecture/*.toc
 
 # Emacs temp files
 *~
