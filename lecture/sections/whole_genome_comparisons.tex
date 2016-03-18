@@ -146,7 +146,7 @@
 %
 \begin{frame}
   \frametitle{Synteny and Collinearity}
-  \textcolor{olive}{Genome rearrangements may occur post-speciation} \\
+  \textcolor{olive}{Genome rearrangements may occur post-divergence} \\
   Sequence similarity, and order of similar regions, may be conserved
   \begin{center}
     \includegraphics[width=0.5\textwidth]{images/collinear}    
@@ -160,14 +160,14 @@
       \item (\textit{mod.}) are collinear
     \end{itemize}
   \end{itemize}
-  Evolutionary constraint (e.g. indicated by synteny) may indicate a functional constraint
+  Evolutionary constraint (e.g. indicated by synteny) may indicate a functional constraint (and help determine \textit{orthology})
 \end{frame}
 
 %
 \begin{frame}
   \frametitle{Alignment algorithms/programs}
-  \textcolor{hutton_green}{I assume you're familiar with BLAST} \\
-  \textcolor{RawSienna}{Na\"{i}ve alignment algorithms are not appropriate}:
+  \textcolor{hutton_green}{I assume you're familiar with BLAST$\ldots$} \\
+  \textcolor{RawSienna}{BLASTN and na\"{i}ve alignment algorithms are not appropriate for whole-genome alignment}:
   \begin{itemize}
     \item Needleman-Wunsch: optimal global alignment
     \item Smith-Waterman: optimal local alignment
@@ -293,10 +293,10 @@
 %
 \begin{frame}
   \frametitle{Multiple genome alignment}
-  Many tools either positional homology or glocal alignment
+  Many tools use either positional homology or glocal alignment
   \begin{columns}[T] 
     \column{.5\textwidth} 
-      \textcolor{olive}{Several tools:}
+      \textcolor{olive}{Several tools available:}
       \begin{itemize}
         \item Mugsy: {\tiny\href{http://mugsy.sourceforge.net/}{(http://mugsy.sourceforge.net/)}}
         \item \textcolor{hutton_blue}{MLAGAN: {\tiny\href{http://lagan.stanford.edu/lagan_web/index.shtml}{(http://lagan.stanford.edu/lagan\_web/index.shtml)}}}
@@ -315,33 +315,7 @@
 }{Darling \textit{et al.} (2003) \textit{Genome Res.} doi:10.1101/gr.2289704
 }}}
   }
-  MAUVE/Progressive MAUVE: \href{http://gel.ahabs.wisc.edu/mauve/}{http://gel.ahabs.wisc.edu/mauve/} \\
-  \begin{columns}[T] 
-    \column{.55\textwidth} 
-      \textcolor{RawSienna}{Algorithm:}
-      \begin{enumerate}
-        \item \textcolor{hutton_green}{Find local alignments (\textit{multi-MUMs}, A)}
-        \item Build guide tree from multi-MUMs
-        \item \textcolor{hutton_blue}{Select subset of multi-MUMs (\textit{anchors}, B)}
-        \begin{itemize}
-          \item Partition into \textit{local collinear blocks} (LCBs)
-        \end{itemize}
-        \item \textcolor{hutton_purple}{Recursive anchoring to refine anchors (C)}
-        \item Progressive alignment against guide tree
-      \end{enumerate}
-    \column{.45\textwidth}
-      \includegraphics[width=0.9\textwidth]{images/mauve_method}
-  \end{columns}    
-\end{frame}
-
-%
-\begin{frame}
-  \frametitle{MAUVE
-  \footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2289704
-}{Darling \textit{et al.} (2003) \textit{Genome Res.} doi:10.1101/gr.2289704
-}}}
-  }
-  MAUVE alignment of LCBs in nine enterobacterial genomes \\
+  MAUVE alignment of nine enterobacterial genomes \\
   \textcolor{hutton_green}{Evidence for rearrangement of homologous backbone sequence}
   \begin{center}
     \includegraphics[height=0.6\textheight]{images/mauve_entero}
@@ -351,12 +325,11 @@
 %
 \begin{frame}
   \frametitle{Draft genome alignment}
-  \textcolor{olive}{High-throughput genome assemblies may be fragments (contigs)} \\
+  \textcolor{olive}{High-throughput genome assemblies are often fragmented (contigs)} \\
   Contigs can be ordered (\textit{scaffolded}):
   \begin{itemize}
     \item \textcolor{hutton_blue}{without alignment}, by long or paired-end reads
-    \item \textcolor{hutton_purple}{by alignment}, to complete \textit{reference} genomes
-    \item \textcolor{hutton_purple}{by alignment}, to other draft incomplete genomes
+    \item \textcolor{hutton_purple}{by alignment}, to complete \textit{reference} genomes or to other draft incomplete genomes
   \end{itemize}
   \begin{center}
     \includegraphics[width=\textwidth]{images/mauve_scaffolding}
