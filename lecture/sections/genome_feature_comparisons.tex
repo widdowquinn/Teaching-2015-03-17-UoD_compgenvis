@@ -112,7 +112,7 @@
 
 % What do you align, and why?
 \begin{frame}
-  \frametitle{What makes genome features equivalent?}
+  \frametitle{Equivalent genome features}
   \begin{center}
     \includegraphics[width=1\textwidth]{images/collinear_zeae}  
   \end{center}
@@ -148,7 +148,7 @@
     \textcolor{olive}{
       \textbf{
       Genome features can have complex evolutionary relationships \\~\\
-      We need precise terms to describe these relationships
+      We have precise terms to describe these relationships
       }
     }
   }
@@ -340,7 +340,12 @@
 
 % 
 \begin{frame}
-  \frametitle{Which prediction methods work best?}
+  \frametitle{Which prediction methods work best?
+    \footnote{\tiny{Wolf and Koonin (2012) \textit{Genome Biol. Evol.} \textbf{4}:1286-1294 \href{http://dx.doi.org/10.1093/gbe/evs100}{doi:10.1093/gbe/evs100
+    }}}
+    \footnote{\tiny{Altenhoff and Dessimoz (2009) \textit{PLoS Comp. Biol.} \textbf{5}:e1000262 \href{http://dx.doi.org/10.1371/journal.pcbi.1000262}{doi:10.1371/journal.pcbi.1000262
+    }}}
+  }
   \begin{itemize}
     \item \textcolor{hutton_green}{Performance varies by choice of method, and interpretation of ``orthology''}
     \item \textcolor{hutton_blue}{Biggest influence is genome annotation quality}
@@ -351,21 +356,8 @@
 
 %
 \begin{frame}
-  \frametitle{Selection Pressure
-  }
-  \Large{
-    \textcolor{olive}{
-      \textbf{
-      Comparative genomics helps identify selection pressures at a structural and sequence level
-      }
-    }
-  }
-\end{frame}
-
-%
-\begin{frame}
   \frametitle{How orthologues help}
-  \textcolor{hutton_green}{Defining core groups of genes as ``orthologue`'' allows analysis of groups of genes together by:}
+  \textcolor{hutton_green}{Defining core groups of genes as ``orthologues'' allows analysis of groups of genes by:}
   \begin{itemize}
     \item \textcolor{hutton_purple}{synteny/collocation}
     \item gene neighbourhood changes (e.g. \textcolor{hutton_purple}{\textit{genome expansion}})
@@ -441,7 +433,8 @@
 }
   \textcolor{hutton_green}{Once equivalent genes have been identified, those present in all related isolates can be identified: \textbf{\textit{the core genome}}.}\\
   \begin{center}
-      \includegraphics[height=0.55\textheight]{images/core_cluster}
+      \includegraphics[height=0.5\textheight]{images/pba_400_circular}
+      \includegraphics[height=0.5\textheight]{images/core_cluster}      
   \end{center}
 \end{frame}
 
@@ -455,7 +448,8 @@
 }
   \textcolor{hutton_green}{The remaining genes are \textbf{\textit{the accessory genome}}, and are expected to mediate function that distinguishes between isolates.}\\[0.2cm]
   \begin{center}
-      \includegraphics[height=0.5\textheight]{images/accessory_cluster} 
+      \includegraphics[height=0.5\textheight]{images/pba_400_circular}        
+      \includegraphics[height=0.5\textheight]{images/accessory_cluster}      
   \end{center}
 \end{frame}
 
@@ -473,6 +467,26 @@
       \includegraphics[height=0.5\textheight]{images/pa_virulence} 
   \end{center}
 \end{frame}
+
+% Which methods work best
+\begin{frame}
+  \frametitle{Identifying the Pangenome
+   \footnote{\tiny{Page \textit{et al.} (2015) \textit{Bioinf.} \textbf{31}:3691-3693 \href{http://dx.doi.org/10.1093/bioinformatics/btv421}{doi:10.1093/bioinformatics/btv421
+  }}}
+  }
+  \texttt{Roary} can produce pangenomes for 1000s of prokaryotes on a desktop machine
+  \begin{columns}[T] 
+    \column{.4\textwidth}   
+      \begin{itemize}
+        \item \textcolor{hutton_green}{Pre-cluster with CD-HIT (reduce input size)}
+        \item \textcolor{hutton_blue}{All-against-all on reduced sequence set}
+        \item \textcolor{hutton_purple}{MCL clustering}
+        \item \textcolor{RawSienna}{Merge clusters and use synteny to identify orthologues}        
+      \end{itemize}  
+      \column{.6\textwidth}
+        \includegraphics[width=0.8\textwidth]{images/roary_performance}
+    \end{columns}  
+  \end{frame}
 
 %
 \begin{frame}
