@@ -91,26 +91,6 @@
 %
 \begin{frame}
   \frametitle{Average Nucleotide Identity (ANI)
-  \footnote{\tiny{\href{http://dx.doi.org/10.1099/ijs.0.64483-0
-}{Goris \textit{et al.} (2007) \textit{Int. J. System. Evol. Biol.} doi:10.1099/ijs.0.64483-0
-}}}
-  }
-  Original method emulated physical experiment:
-  \begin{columns}[T] 
-    \column{.6\textwidth} 
-      \begin{enumerate}
-        \item \textcolor{hutton_green}{break genome into 1020nt fragments}
-        \item \textcolor{hutton_blue}{align all fragments with BLASTN}
-        \item \textcolor{hutton_purple}{ANI = mean identity of all matches with $>30\%$ identity, $>70\%$ coverage}
-      \end{enumerate}
-    \column{.4\textwidth}
-      \includegraphics[width=\textwidth]{images/ani_ddh_equiv}
-  \end{columns}    
-\end{frame}
-
-%
-\begin{frame}
-  \frametitle{Average Nucleotide Identity (ANI)
   \footnote{\tiny{\href{http://dx.doi.org/10.1073/pnas.0906412106
 }{Richter \& Rossell\'{o}-M\'{o}ra \textit{et al.} (2009) \textit{Proc. Natl. Acad. Sci. USA} doi:10.1073/pnas.0906412106
 }}}
@@ -120,7 +100,7 @@
     \column{.5\textwidth} 
       \textcolor{RawSienna}{ANIm}
       \begin{enumerate}
-        \item \textcolor{hutton_green}{Align sequences with NUCmer (no fragmentation)}
+        \item \textcolor{hutton_green}{Align sequences with NUCmer}
         \item \textcolor{hutton_purple}{ANI = mean identity of matches}
       \end{enumerate}
     \column{.5\textwidth}
@@ -181,17 +161,6 @@
     \end{itemize}
   \end{itemize}
   Evolutionary constraint (e.g. indicated by synteny) may indicate a functional constraint
-\end{frame}
-
-%
-\begin{frame}
-  \frametitle{Pairwise genome alignments}
-  \textcolor{hutton_green}{Which genomes should you align (or not bother with)?} \\
-  \textcolor{RawSienna}{For reasonable analysis, genomes should}:
-  \begin{itemize}
-    \item derive from a sufficiently \textcolor{red}{recent} common ancestor, so that \textcolor{hutton_purple}{homologous regions can be identified}
-    \item derive from a sufficiently \textcolor{red}{distant} common ancestor, so that \textcolor{hutton_purple}{biologically meaningful changes are likely to be found}
-  \end{itemize}
 \end{frame}
 
 %
@@ -270,24 +239,13 @@
 
 %
 \begin{frame}
-  \frametitle{MUMmer
-  \footnote{\tiny{\href{http://dx.doi.org/10.1186/gb-2004-5-2-r12
-}{Kurtz \textit{et al.} (2004) \textit{Genome Biol.} doi:10.1186/gb-2004-5-2-r12
-}}}
-  }
-  \textcolor{RawSienna}{Process:}
-  \begin{enumerate}
-    \item \textcolor{hutton_green}{Identify non-overlapping set of maximal exact matches (MUMs: \textit{maximal unique matches})}
-    \item \textcolor{hutton_blue}{Cluster MUMs into \textit{alignment anchors}}
-    \item \textcolor{hutton_purple}{Extend between anchors to produce final (gapped) alignment}    
-  \end{enumerate}
-  \textcolor{RawSienna}{The approach is very flexible}
-  \begin{enumerate}
-    \item Used in a suite of programs (\url{mummer}, \url{nucmer}, \url{promer}, $\ldots$)
-    \item Nucleotide and "conceptual protein" (sensitive!) alignments
-    \item Used for comparisons, scaffolding, repeat detection
-    \item Basis of other aligners and assemblers, (\url{Mugsy}, \url{AMOS}, $\ldots$)
-  \end{enumerate}
+  \frametitle{Pairwise genome alignments}
+  \textcolor{hutton_green}{Which genomes should you align (or not bother with)?} \\
+  \textcolor{RawSienna}{For reasonable analysis, genomes should}:
+  \begin{itemize}
+    \item derive from a sufficiently \textcolor{red}{recent} common ancestor, so that \textcolor{hutton_purple}{homologous regions can be identified}
+    \item derive from a sufficiently \textcolor{red}{distant} common ancestor, so that \textcolor{hutton_purple}{biologically meaningful changes are likely to be found}
+  \end{itemize}
 \end{frame}
 
 % Vibrio mimicus
@@ -347,41 +305,6 @@
       \end{itemize}
     \column{.5\textwidth}
       \includegraphics[width=0.75\textwidth]{images/poshom_v_glocal}
-  \end{columns}    
-\end{frame}
-
-%
-\begin{frame}
-  \frametitle{Human:Mouse:Rat}
-  \begin{center}
-    \includegraphics[height=0.7\textheight]{images/mouse-rat-photo}
-  \end{center}
-\end{frame}
-
-%
-\begin{frame}
-  \frametitle{Human:Mouse:Rat
-  \footnote{\tiny{\href{http://dx.doi.org/10.1101/gr.2067704
-}{Brudno \textit{et al.} (2004) \textit{Genome Res.} doi:10.1101/gr.2067704
-}}}
-  }
-  \textcolor{hutton_green}{Three-way progressive alignment} 
-  \begin{columns}[T] 
-    \column{.4\textwidth} 
-    \textcolor{hutton_blue}{Initial alignments: BLAT \\
-    Synteny: LAGAN/MLAGAN \\~\\}
-    \textcolor{hutton_purple}{Three-way synteny}
-      \begin{itemize}
-        \item Homologous (HMR)
-        \item Rodent-only (MR)
-        \item Human-mouse (HM)
-        \item Human-rat (HR)
-      \end{itemize}
-    \column{.6\textwidth}
-      \begin{center}
-        \includegraphics[width=\textwidth]{images/hmr_alignment} \\
-        {\tiny(synteny mapped to rat genome)}
-      \end{center}
   \end{columns}    
 \end{frame}
 
@@ -462,7 +385,7 @@
 
 %
 \begin{frame}
-  \frametitle{Conclusions}
+  \frametitle{Whole Genome Comparisons}
   \textcolor{RawSienna}{Physical and computational genome comparisons} \\
   \begin{itemize}
     \item Similar biological questions
