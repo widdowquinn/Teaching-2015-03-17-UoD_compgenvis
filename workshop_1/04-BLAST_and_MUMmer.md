@@ -1,4 +1,4 @@
-# Session 04 - BLAST and MUMmer genome comparisons <img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
+# Session 04 - Pairwise genome comparisons <img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
 
 ## Learning Outcomes
 
@@ -317,4 +317,4 @@ However, the `.crunch` tabular file accepted by `ACT` is simple, and can be read
 * Do the differences appear to be significant?
 * Is there any reason to choose one alignment tool over the other?
 
-** Exercise 5 - stretch goal (20min): Run a pairwise genome alignment between any pair of *Elizabethkingia* genomes from session 03, and visualise the comparison using `ACT` **
+** Exercise 5 - stretch goal (20min): Run a pairwise genome alignment between any pair of *Elizabethkingia* genomes from session 03, and visualise the comparison using `ACT`. **
