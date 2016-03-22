@@ -104,3 +104,6 @@ exercises/i-ADHoRe/i-ADHoRe_activity/
 
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps
+
+# Removed shiny example
+shiny/
