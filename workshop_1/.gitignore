@@ -5,3 +5,6 @@ all_data.pdf
 # Exclude ANIm analysis output from session 3
 Elizabethkingia_ANIm/
 Elizabethkingia_ANIm.log
+
+# Exclude session 4 output
+session-04_output/

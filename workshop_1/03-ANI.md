@@ -111,7 +111,7 @@ The ATCC isolates of a species can be considered to be *reference* isolates, tha
 
 * What are the species that you see?
 * To which species do the outbreak isolates belong, according to this analysis?
-* Do you see any potential problems with the data.
+* Do you see any potential problems with the data?
 
 ### Interpreting ANIm identity output
 
