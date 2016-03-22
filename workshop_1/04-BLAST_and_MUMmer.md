@@ -1,11 +1,11 @@
-# Session 04 - Pairwise genome comparisons <img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
+`# Session 04 - Pairwise genome comparisons <img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
 
 ## Learning Outcomes
 
-* Use BLASTN and MUMmer at the command-line to compare prokaryotic genomes
-* Interpret MUMMer dotplot output
-* Use ACT to visualise and interpret pairwise genome alignments
-* Use ACT to compare and interpret pairwise genome alignments
+* Use `BLASTN` and `MUMmer` at the command-line to compare prokaryotic genomes
+* Interpret `MUMMer` dotplot output
+* Use `ACT` to visualise and interpret pairwise genome alignments
+* Use `ACT` to compare and interpret pairwise genome alignments
 
 ## Introduction
 

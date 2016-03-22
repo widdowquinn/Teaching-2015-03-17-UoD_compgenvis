@@ -8,3 +8,7 @@ Elizabethkingia_ANIm.log
 
 # Exclude session 4 output
 session-04_output/
+
+# Exclude session 5 output
+session-05_output/
+*.sslist
