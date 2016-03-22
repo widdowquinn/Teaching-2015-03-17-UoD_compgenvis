@@ -154,7 +154,7 @@ def read_genbank(*filenames):
                 ft_dict[ft.qualifiers['protein_id'][0]] = \
                     (record_name, int(ft.location.start), 
                      int(ft.location.end), ft.location.strand)
-    print "Loaded %d features" % len(ft_dict)
+    print("Loaded %d features" % len(ft_dict))
     return ft_dict
 
 # Function to split a full sequence reference ID into only the last value
@@ -187,4 +187,4 @@ def write_crunch(rbbh, features, outdir=".", filename="rbbh.crunch"):
     """
     with open(os.path.join(outdir, filename), 'w') as fh:
         rbbh.apply(write_line, axis=1, args=(features, fh))
-    print "Wrote file to %s" % os.path.join(outdir, filename)
+    print("Wrote file to %s" % os.path.join(outdir, filename))
