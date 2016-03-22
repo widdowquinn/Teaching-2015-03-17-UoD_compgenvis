@@ -15,7 +15,7 @@ import pandas as pd
 import os
 
 # GLOBALS
-datadir = "data/rbbh_output"
+datadir = "rbbh_data/rbbh_output"
 
 # Function to read BLAST data
 def read_data(s1, s2):
@@ -58,7 +58,7 @@ def filter_matches(*df):
         keeps the first encountered row, which is also the "best"
         HSP in BLAST tabular output.
     """
-    return tuple([d.drop_duplicates(cols='query_id') for d in df])
+    return tuple([d.drop_duplicates(subset='query_id') for d in df])
     
 # Function to parse the appropriate BLASTP data and return a dataframe of RBBH
 def find_rbbh(s1, s2, pid=0, cov=0):
