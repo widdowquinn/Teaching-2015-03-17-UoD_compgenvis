@@ -1,0 +1,2 @@
+# Exclude .pdf output from exercises
+*.pdf
