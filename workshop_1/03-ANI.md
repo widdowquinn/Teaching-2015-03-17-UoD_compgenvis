@@ -86,8 +86,13 @@ It is good practice to retain a log file, for reproducibility, and to describe e
 
 So, our command-line will be:
 
-```bash
-average_nucleotide_identity.py -v -g -i genome_data/Elizabethkingia/ -o Elizabethkingia_ANIm   --labels genome_data/Elizabethkingia/labels.txt --classes genome_data/Elizabethkingia/classes.txt -l Elizabethkingia_ANIm.log
+```
+average_nucleotide_identity.py -v -g \ 
+  -i genome_data/Elizabethkingia/ \
+  -o Elizabethkingia_ANIm \ 
+  --labels genome_data/Elizabethkingia/labels.txt \ 
+  --classes genome_data/Elizabethkingia/classes.txt \  
+  -l Elizabethkingia_ANIm.log
 ```
 
 ** EXERCISE 1 (10min): Enter this command at the terminal, and run it. **
