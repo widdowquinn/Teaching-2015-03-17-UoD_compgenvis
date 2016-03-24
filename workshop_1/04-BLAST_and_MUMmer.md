@@ -1,4 +1,15 @@
-`# Session 04 - Pairwise genome comparisons <img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
+---
+title: "Session 04 - Pairwise genome comparisons"
+author: "Leighton Pritchard"
+output: 
+  html_document:
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+<img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
 
 ## Learning Outcomes
 
@@ -15,7 +26,7 @@ The two packages you will use to perform alignment are `BLAST+` and `MUMmer`. Th
 
 You will run `BLASTN+` comparisons with two different algorithms, as discussed in the lecture: `BLASTN` and `megaBLAST`, and compare the outputs using the visualisation tool `ACT`.
 
-You will also run a `mummer` comparison on the same genomes, and compare this output to that of the `megaBLAST` algorithm, again using `ACT`.
+You will also run a `nucmer` comparison on the same genomes, and compare this output to that of the `megaBLAST` algorithm, again using `ACT`.
 
 ## The input dataset
 
@@ -73,7 +84,7 @@ time blastn \
 
 This will produce a plain text table of aligned regions between each genome, with one region per line.
 
-** EXERCISE 1 (5min): Enter this command at the terminal, and run it **
+***EXERCISE 1 (5min): Enter this command at the terminal, and run it***
 
 **NOTE:** The command should execute and finish very quickly.
 
@@ -86,7 +97,7 @@ This will produce a plain text table of aligned regions between each genome, wit
 
 You can make `BLASTN+` run the old (legacy-style) `BLASTN` algorithm search on the two *E. coli* genomes, by specifying the argument `-task blastn`.
 
-** EXERCISE 2 (5min): Modify the `BLAST` command from exercise 1 to use the `BLASTN` algorithm, using the `-task blastn` argument. Write the output to the file `session-04_output/E_coli_blastn.tab` **
+***EXERCISE 2 (5min): Modify the `BLAST` command from exercise 1 to use the `BLASTN` algorithm, using the `-task blastn` argument. Write the output to the file `session-04_output/E_coli_blastn.tab`***
 
 * How long did the alignment take to run? Which algorithm do you think is more efficient?
 * Use the `head` and `wc` commands to inspect the output file. Do the results differ from the `megaBLAST` output? If so, how?
@@ -124,7 +135,7 @@ time nucmer --maxgap=500 --mincluster=100 \
   genome_data/Ecoli/NC_004431.fna
 ```
 
-** EXERCISE 3a (5min): Run the above command at the terminal **
+***EXERCISE 3a (5min): Run the above command at the terminal***
 
 * How long did the command take to run?
 * What is the name of the output file that is written? What does it look like (**HINT:** use `head` and `wc -l`)?
@@ -137,7 +148,7 @@ show-coords -r session-04_output/E_coli_nucmer.delta > \
   session-04_output/E_coli_nucmer.coords
 ```
 
-** EXERCISE 3b (5min): Run the above command at the terminal **
+***EXERCISE 3b (5min): Run the above command at the terminal***
 
 * Inspect the output file using `head`. Do you find this output easier to understand?
 
@@ -153,7 +164,7 @@ show-aligns session-04_output/E_coli_nucmer.delta \
 **NOTE:** the `show-aligns` command requires you to know and use the FASTA sequence IDs of your query and reference sequences - you can get these from the FASTA file.
 
 
-** EXERCISE 3c (5min): Run the above command at the terminal **
+***EXERCISE 3c (5min): Run the above command at the terminal***
 
 * Inspect the output file using `head`. Do you find this output useful?
 
@@ -168,7 +179,7 @@ delta-filter -q -r \
   session-04_output/E_coli_nucmer.filter
 ```
 
-** EXERCISE 3d (5min): Run the above command at the terminal **
+***EXERCISE 3d (5min): Run the above command at the terminal***
 
 * Inspect the output file using `head`.
 * Make this output more human-readable with `show-coords`, writing the output to `session-04_output/E_coli_nucmer_filtered.coords`, and inspect the output.
@@ -189,7 +200,7 @@ mummerplot --png \
   --prefix=session-04_output/E_coli_nucmer
 ```
 
-** EXERCISE 3e (5min): Run the above command at the terminal **
+***EXERCISE 3e (5min): Run the above command at the terminal***
 
 **NOTE:** you may see some command-line warnings about deprecation - these can be ignored
 
@@ -212,7 +223,7 @@ In this part of the session you will use ACT to visualise and compare the output
 act
 ```
 
-** Exercise 4a (5min): Start `ACT` from the command-line **
+***Exercise 4a (5min): Start `ACT` from the command-line***
 
 You should see the splash screen indicated below:
 
@@ -301,13 +312,13 @@ In fact, this region is genomic island GI28, as described in [Roos & van Passel 
 
 As noted above `nucmer` output can be complex, but it is possible to generate human-readable output. Unfortunately, the files produced by programs such as `show-coords` are not directly readable by `ACT`. This is a common issue with genome comparisons, as applications produce many different types of data, and there are few widely-accepted standards in the field.
 
-However, the `.crunch` tabular file accepted by `ACT` is simple, and can be readily generated from the output of `MUMmer`'s `show-coords` package. The script `nucmer_to_crunch.py` the current directory can do this for you. It can be used on your `nucmer` output as follows:
+However, the `.crunch` tabular file accepted by `ACT` is simple, and can be readily generated from the output of `MUMmer`'s `show-coords` package. The script `nucmer_to_crunch.py` in the current directory can do this for you. It can be used on your `nucmer` output as follows:
 
 ```
 ./nucmer_to_crunch.py -i session-04_output/E_coli_nucmer.coords -o session-04_output/E_coli_nucmer.crunch -v
 ```
 
-** Exercise 4b (10min): Run the code above, then use `ACT` to compare the `megaBLAST` and `MUMMer` alignments **
+***Exercise 4b (10min): Run the code above, then use `ACT` to compare the `megaBLAST` and `MUMMer` alignments***
 
 **HINT:** Your file selection dialogue should resemble that below:
 
@@ -317,4 +328,4 @@ However, the `.crunch` tabular file accepted by `ACT` is simple, and can be read
 * Do the differences appear to be significant?
 * Is there any reason to choose one alignment tool over the other?
 
-** Exercise 5 - stretch goal (20min): Run a pairwise genome alignment between any pair of *Elizabethkingia* genomes from session 03, and visualise the comparison using `ACT`. **
+***Exercise 5 - stretch goal (20min): Run a pairwise genome alignment between any pair of Elizabethkingia genomes from session 03, and visualise the comparison using `ACT`. Comment on what you find.***

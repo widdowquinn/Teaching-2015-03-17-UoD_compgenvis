@@ -1,4 +1,15 @@
-# Session 03 - ANI <img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
+---
+title: "Session 03 - Average Nucleotide Identity (ANI)"
+author: "Leighton Pritchard"
+output: 
+  html_document:
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+<img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
 
 ## Learning Outcomes
 
@@ -95,7 +106,7 @@ average_nucleotide_identity.py -v -g \
   -l Elizabethkingia_ANIm.log
 ```
 
-** EXERCISE 1 (10min): Enter this command at the terminal, and run it. **
+***EXERCISE 1 (10min): Enter this command at the terminal, and run it.***
 
 **NOTE:** This will take a few minutes to complete (3min on my laptop, but it will be slower in the session)
 
@@ -107,7 +118,7 @@ The colour scheme has two regions: red and blue. Pairwise comparisons with >95% 
 
 The ATCC isolates of a species can be considered to be *reference* isolates, that define a species.
 
-** EXERCISE 2 (10min): How many distinct species can you see in the dataset? **
+***EXERCISE 2 (10min): How many distinct species can you see in the dataset?***
 
 * What are the species that you see?
 * To which species do the outbreak isolates belong, according to this analysis?
@@ -121,7 +132,7 @@ We can tell if this is the case in our analysis by inspecting the *alignment cov
 
 Open the file `Elizabethkingia_ANIm/ANIm_alignment_coverage.pdf` that has been produced by your analysis, and inspect the figure.
 
-** EXERCISE 3 (5min): What is the extent of sequence homology in the dataset? **
+***EXERCISE 3 (5min): What is the extent of sequence homology in the dataset?***
 
 * What is the typical percentage coverage of pairwise comparisons between species?
 * Does this affect your interpretation in Exercise 2? If so, how?

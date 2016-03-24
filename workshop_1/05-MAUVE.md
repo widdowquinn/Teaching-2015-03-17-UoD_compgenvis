@@ -1,4 +1,15 @@
-# Session 05 - Multiple genome comparisons
+---
+title: "Session 05 - Multiple genome comparisons"
+author: "Leighton Pritchard"
+output: 
+  html_document:
+    number_sections: yes
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+---
+
+<img src="data/JHI_STRAP_Web.png" style="width: 150px; float: right;"> 
 
 ## Learning outcomes
 
@@ -17,6 +28,7 @@ You will use `Mauve` to align draft and reference genomes of *Elizabethkingia*, 
 
 Your examples are again the *Elizabethkingia* genomes from session 03, found in the directory `genome_data/Elizabethkingia`:
 
+```
 genome_data/Elizabethkingia/
 ├── GCF_000401415.1.fasta
 ├── GCF_000447375.1.fasta
@@ -27,9 +39,9 @@ genome_data/Elizabethkingia/
 ├── SRR3240414_final.fasta
 ├── classes.txt
 └── labels.txt
+```
 
-
-## Prepare a directory for output files
+## Prepare a directory for output files
 
 We will begin by preparing a new directory for our output files, called `session-05_output`. To do this we use the command `mkdir` (make directory), by issuing the following command at the terminal:
 
@@ -47,7 +59,7 @@ mkdir -p session-05_output
 
 The algorithm that `Mauve` uses is equally applicable to draft and complete genome sequences, and can be run in single, and *progressive* (i.e. iterated) modes. In this activity, you will use the *progressive* mode to align the two draft *Elizabethkingia* assemblies against the `GCF_000495995.1` (*E. anophelis* NUH1) reference.
 
-** Exercise 1a (5min): Start `Mauve` **
+***Exercise 1a (5min): Start `Mauve`***
 
 * Start `Mauve` at the command-line with the command:
 
@@ -59,7 +71,7 @@ You should be greeted by the splash screen, and then a window as below:
 
 ![Mauve start window](images/mauve1.png?raw=True =300x)
 
-** Exercise 1b (15min): Specify sequences for alignment, and run `Mauve` **
+***Exercise 1b (15min): Specify sequences for alignment, and run `Mauve`***
 
 From the `File` menu item, select `Align with progressiveMauve`. You should then see a file selection dialogue box:
 
@@ -67,7 +79,7 @@ From the `File` menu item, select `Align with progressiveMauve`. You should then
 
 ![Mauve file selection dialogue](images/mauve3.png?raw=True =200x)
 
-There are tabs available for you to change parameters related to the alignment - you should ignore these for now:
+There are tabs available for you to change parameters related to the alignment - you should ignore these for now, but note the level of control you have over elements of the alignment algorithm:
 
 ![Mauve progressive alignment parameter options](images/mauve4.png?raw=True =200x)
 
@@ -97,7 +109,7 @@ The alignment view shows the *E. anophelis* NUH1 genome in the top row, followed
 
 The major *local collinear blocks* (LCBs) are indicated in colour blocks. The lines indicate  within the blocks represent the sequence conservation of that region. The thin lines linking LCBs are guides to the eye, so that rearrangements can be seen quickly. Blocks above the line are aligned in the forward direction with respect to the input data, and those below the line are reversed with respect to the input.
 
-** Exercise 1c (15min): Inspect the alignment, and interpret the result **
+***Exercise 1c (15min): Inspect the alignment, and interpret the result***
 
 * How many LCBs are indicated in the alignment?
 * Do LCBs lie within, or cross, contig boundaries?
@@ -125,7 +137,7 @@ At this point all the input contigs remain in their original order, and have not
 
 The `Mauve Contig Mover` (MCM) is provided to do this for us, but can only reorder contigs in a single genome, compared to a reference. You will use it to reorder the draft outbreak isolate genome `SRR3240397_final` against the *E. anophelis* NUH1 reference.
 
-** Exercise 1d (15min): Reorder draft genome contigs **
+***Exercise 1d (15min): Reorder draft genome contigs***
 
 * Select `Tools -> Move Contigs` from the menu:
 
@@ -142,6 +154,7 @@ An informative message will appear
 * Choose input files in the dialogue box.
 
 **NOTE:** This process requires that your **reference** sequence is named first. Use the following order:
+
 1. `GCF_000495995.1.fasta` (*E. anophelis* NUH1 reference)
 2. `SRR3240397_final.fasta` (outbreak isolate)
 
@@ -154,7 +167,7 @@ An informative message will appear
 
 Unlike `Mauve` proper, `MCM` will place intermediate alignments and output in subdirectories `alignmentN` of the chosen output directory. This allows you to inspect individual alignments, and to recover the final reordering of your draft contigs, in a convenient way. 
 
-* In this case the number of alignments required is 4, and you should take `alignment4` to be your final alignment. These files can be found in session-05_output/alignment4/
+* In this case the number of alignments required is 4, and you should take `alignment4` to be your final alignment. These files can be found in `session-05_output/alignment4/`
 
 ```
 session-05_output/alignment4/
@@ -180,7 +193,7 @@ The order of contigs on the bottom row will not necessarily be the same order as
 
 In practical terms, `MCM` has the advantage of producing output with explicit ordering information, in the `session-05_output/alignment4/SRR3240397_final_contigs.tab` file, and the final `session-05_output/alignment4/` file has the input contigs reordered into the best alignment, as determined by `Mauve`.
 
-** Exercise 1e (5min): Inspect the reordered contig files **
+***Exercise 1e (5min): Inspect the reordered contig files***
 
 * Use `head` to inspect `session-05_output/alignment4/SRR3240397_final_contigs.tab`
 * Use `grep '>' session-05_output/alignment4/SRR3240397_final.fasta` to see that contigs have been reordered with respect to the input sequence in `genome_data/Elizabethkingia/SRR3240397_final.fasta`
@@ -205,7 +218,7 @@ and attempt to visualise the results in `ACT`, you will get a result that is imp
 
 The issue here is that `ACT` runs together alignments for the different fragments in each genome (indicated by the brown markers). Although the `.crunch` file contains enough information for an alignment viewer to render the alignment correctly by offsetting alignment co-ordinates appropriately, `ACT` does not currently do this. 
 
-One solution is to stitch the contigs together, and you will do this using the `stitch_six_frame_stops.py` script in the `scripts` directory. This joins the contigs in the order presented in the input FASTA file, connecting them with the sequence
+One solution is to stitch the contigs together into a single contiguous sequence before running the pairwise alignment, and you will do this using the `stitch_six_frame_stops.py` script in the `scripts` directory. This joins the contigs in the order presented in the input FASTA file, connecting them with the sequence
 
 ```
 NNNNNCATCCATTCATTAATTAATTAATGAATGAATGNNNNN
@@ -214,18 +227,19 @@ NNNNNCATCCATTCATTAATTAATTAATGAATGAATGNNNNN
 which contains start and stop codons in all frames. You can do this by running:
 
 ```
-stitch_six_frame_stops.py -i session-05_output/alignment4/SRR3240397_final.fasta \
+stitch_six_frame_stops.py \
+  -i session-05_output/alignment4/SRR3240397_final.fasta \
   -o session-05_output/alignment4/SRR3240397_stitched.fasta \
   --id=SRR3240397_stitched -v
 ```
 
-** Exercise 2a (5min): Stitch contigs in the `GCF_000495995.1.fasta` reference, and reordered  `SRR3240397_final.fasta` file **
+***Exercise 2a (5min): Stitch contigs in the `GCF_000495995.1.fasta` reference, and reordered  `SRR3240397_final.fasta` file***
 
 * Use the `stitch_six_frame_stops.py` script to create two new files: `session-05_output/alignment4/SRR3240397_stitched.fasta` and `session-05_output/alignment4/GCF_000495995.1.stitched.fasta`
 
 **NOTE:** the script also generates a corresponding `.gff3` file for convenience, which details the locations of the original contigs on the output stitched sequence.
 
-** Exercise 2b (5min): Run a pairwise `megaBLAST` alignment using the two stitched genomes **
+***Exercise 2b (5min): Run a pairwise `megaBLAST` alignment using the two stitched genomes***
 
 **HINT:** modify the `blastn` code above and write output to `session-05_output/reordered_megablast.crunch`
 
