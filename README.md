@@ -18,7 +18,7 @@ The lecture notes and slides can be found in the `lecture` subdirectory, and the
 You can grab a local copy of all the files for this workshop/lecture using `git clone`:
 
 ```
-$ git clone https://github.com/widdowquinn/Teaching-Dundee-BS32010
+$ git clone https://github.com/widdowquinn/Teaching-Dundee-BS32010.git
 ```
 
 ### Prerequisites
