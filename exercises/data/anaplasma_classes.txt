@@ -1,9 +1,0 @@
-NC_004842	A. marginale
-NC_007797	A. phagocytophilum
-NC_012026	A. marginale
-NC_021879	A. phagocytophilum
-NC_021880	A. phagocytophilum
-NC_021881	A. phagocytophilum
-NC_022760	A. marginale
-NC_022784	A. marginale
-NC_013532	A. centrale

@@ -1,0 +1,15 @@
+# Exclude RStudio accessory files
+.Rhistory
+
+# Exclude session 06 output
+rbbh_data/rbbh_output/NC_013421_vs_NC_010694.tab
+NC_004547_vs_NC_010694.crunch
+
+# Exclude session 07 output
+NC_004547_vs_NC_010694.tab
+
+# Exclude session 08 output
+NC_010694_vs_NC_004547_mcl.crunch
+mcl_data/all-vs-all.abc
+mcl_data/seq.mci
+mcl_data/seq.tab

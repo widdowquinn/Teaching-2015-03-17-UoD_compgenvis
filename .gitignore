@@ -78,29 +78,8 @@ lecture/*.synctex.gz(busy)
 # iPython checkpoints
 .ipynb_checkpoints
 
-# Exercise output
-exercises/all_chromosomes.pdf
-exercises/example.png
-exercises/activity.pdf
-exercises/ex03_fragments
-exercises/ex03_ANIb/
-exercises/ex03_ANIm/
-exercises/ex03_TETRA/
-exercises/whole_genome_alignment/wga_output/
-exercises/example1.pdf
-exercises/example1.png
-exercises/example2.pdf
-exercises/example2.png
-exercises/predict_CDS/data/predicted*
-exercises/mcl_orthologues/data/*.crunch
-exercises/mcl_orthologues/data/all-vs-all.abc
-exercises/mcl_orthologues/data/out.seq.mci.I60
-exercises/mcl_orthologues/data/seq.*
-exercises/i-ADHoRe/gd_output/
-exercises/i-ADHoRe/genome_lists/
-exercises/i-ADHoRe/i-ADHoRe_config.ini
-exercises/i-ADHoRe/rbbh_input.tab
-exercises/i-ADHoRe/i-ADHoRe_activity/
+# Ignore old exercises
+exercises/
 
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps

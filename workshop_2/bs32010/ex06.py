@@ -172,10 +172,10 @@ def write_line(line, features, fh):
     fh.write(' '.join([str(line['bitscore_x']),
                        str(line['percentage_identity_x']),
                        str(ft1[2]) if ft1[3] < 0 else str(ft1[1]),
-                       str(ft1[1]) if ft1[3] < 0 else str(ft1[1]),                                
+                       str(ft1[1]) if ft1[3] < 0 else str(ft1[2]),
                        str(ft1[0]),
                        str(ft2[2]) if ft2[3] < 0 else str(ft2[1]),
-                       str(ft2[1]) if ft2[3] < 0 else str(ft2[1]),
+                       str(ft2[1]) if ft2[3] < 0 else str(ft2[2]),
                        str(ft2[0])
                        ]) + '\n')
 
