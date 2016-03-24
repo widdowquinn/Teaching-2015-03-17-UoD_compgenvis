@@ -1,0 +1,14 @@
+# Exclude .pdf output from session 1 exercises
+all_chromosomes.pdf
+all_data.pdf
+
+# Exclude ANIm analysis output from session 3
+Elizabethkingia_ANIm/
+Elizabethkingia_ANIm.log
+
+# Exclude session 4 output
+session-04_output/
+
+# Exclude session 5 output
+session-05_output/
+*.sslist

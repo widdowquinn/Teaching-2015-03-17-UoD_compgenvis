@@ -1,0 +1,48 @@
+GCF_000401415.1	Elizabethkingia meningoseptica
+GCF_000367325.1	Elizabethkingia meningoseptica
+GCF_001521815.1	Elizabethkingia genomosp. 1
+GCF_001521755.1	Elizabethkingia meningoseptica
+GCF_001521765.1	Elizabethkingia genomosp. 4
+GCF_001521745.1	Elizabethkingia genomosp. 2
+GCF_001521735.1	Elizabethkingia genomosp. 3
+GCF_001483145.1	Elizabethkingia miricola
+GCF_001482795.1	Elizabethkingia anophelis
+GCF_000331815.1	Elizabethkingia anophelis
+GCF_001051975.1	Elizabethkingia anophelis
+GCF_001050935.1	Elizabethkingia anophelis
+GCF_001011675.1	Elizabethkingia meningoseptica
+GCA_000982575.1	Elizabethkingia anophelis
+GCF_000240095.1	Elizabethkingia anophelis
+GCF_000955665.1	Elizabethkingia sp. BM10
+GCA_000773465.1	Elizabethkingia meningoseptica
+GCF_000769445.1	Elizabethkingia miricola
+GCF_000495935.2	Elizabethkingia anophelis
+GCF_000735205.1	Elizabethkingia meningoseptica
+GCF_000689515.1	Elizabethkingia anophelis
+GCF_000689455.1	Elizabethkingia anophelis
+GCF_000496055.1	Elizabethkingia anophelis
+GCF_000496035.1	Elizabethkingia anophelis
+GCF_000496015.1	Elizabethkingia anophelis
+GCF_000495995.1	Elizabethkingia anophelis
+GCF_000495975.1	Elizabethkingia anophelis
+GCF_000495955.1	Elizabethkingia anophelis
+GCF_000495935.1	Elizabethkingia anophelis
+GCF_000447375.1	Elizabethkingia meningoseptica
+SRR3240397_final	outbreak
+SRR3240398_final	outbreak
+SRR3240399_finaloutbreak
+SRR3240400_final	outbreak
+SRR3240401_final	outbreak
+SRR3240402_final	outbreak
+SRR3240403_final	outbreak
+SRR3240404_final	outbreak
+SRR3240405_final	outbreak
+SRR3240406_final	outbreak
+SRR3240407_final	outbreak
+SRR3240408_final	outbreak
+SRR3240409_final	outbreak
+SRR3240410_final	outbreak
+SRR3240411_final	outbreak
+SRR3240412_final	outbreak
+SRR3240413_final	outbreak
+SRR3240414_final	outbreak

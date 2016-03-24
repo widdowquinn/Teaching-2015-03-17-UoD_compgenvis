@@ -55,11 +55,19 @@ target/
 
 # LaTeX intermediate files
 presentation/*.aux
+presentation/*.toc
 presentation/*.nav
 presentation/*.out
 presentation/*.snm
 presentation/*.synctex.gz
-presentation/*.toc
+presentation/*.synctex.gz(busy)
+lecture/*.aux
+lecture/*.nav
+lecture/*.out
+lecture/*.snm
+lecture/*.toc
+lecture/*.synctex.gz
+lecture/*.synctex.gz(busy)
 
 # Emacs temp files
 *~
@@ -96,3 +104,6 @@ exercises/i-ADHoRe/i-ADHoRe_activity/
 
 # Don't give away shinyapps.io secrets
 shiny/nucleotide_frequencies/shinyapps
+
+# Removed shiny example
+shiny/

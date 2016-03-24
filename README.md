@@ -1,72 +1,56 @@
-# README.md - Teaching-UoD-Comparative-Genomics-Visualisation
+# README.md - BS32010 University of Dundee
 
 ## Overview
 
-This repository contains teaching materials used in delivering the 3rd year bioinformatics course lectures on "Comparative Genome Analysis and Visualisation" at the University of Dundee, 2015
+This repository contains teaching materials used in delivering the BS32010 bioinformatics course lecture and workshops on "Comparative Genome Analysis and Visualisation" at the University of Dundee, March 2016
+
+The format has changed since 2015, and now takes the form of:
+
+* One introductory lecture (1hr)
+* Two workshops (2hr each)
+
+The lecture notes and slides can be found in the `lecture` subdirectory, and the material for the workshops can be found in `workshop_1` and `workshop_2`.
+
+
 
 ## Getting Started
 
 You can grab a local copy of all the files for this workshop/lecture using `git clone`:
 
 ```
-$ git clone https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis.git
+$ git clone https://github.com/widdowquinn/Teaching-Dundee-BS32010
 ```
-
-The lecture is presented in a tutorial/workshop format, with interactive examples and exercises using [iPython notebooks](http://ipython.org/notebook.html). 
-
-* Slides for the talk are provided in the `presentation` subdirectory, in LaTeX format for use with [Beamer](http://en.wikipedia.org/wiki/Beamer_%28LaTeX%29).
-* Example exercises and data are found in the `exercises` subdirectory.
 
 ### Prerequisites
 
 The exercises and examples have been written, and are known to run, with the following software, but they may also run happily on other versions:
 
-* **Python 2.7**
-* **iPython (with pylab and matplotlib 1.4.3+) 1.1.0**
-* **Biopython 1.63+**
-* **Pandas 0.13**
-* **i-ADHoRe-3.0.01**
-* **ncbi-blast-2.2.29+**
-* **blast-2.2.26**
-* **MUMmer3.23**
+* `Python` 3.5.1
+* `Jupyter` 4.06
+* `Biopython` 1.66
+* `Pandas` 0.17.1
+* `i-ADHoRe` 3.0.01
+* `NCBI BLAST` 2.2.31+
+* `MUMmer` 3.23
+* `MCL` 14-137
 
-## Executing iPython notebooks
+## Executing notebooks
 
-To start iPython in a suitable form in your browser, execute
+To start the notebooks in your browser, execute
 
 ```
-$ ipython notebook
+$ jupyter notebook
 ```
 
-at the command-line. It is possible to start iPython in other ways (e.g. in the terminal window, without inline plots, or using the Qt console), but this is the way the course examples/exercises were intended to be run.
+at the command-line. 
 
-It may be useful to revise some material from Peter Cock's Biopython workshop - the notes and exercises can be obtained from 
-
-* [https://github.com/peterjc/biopython_workshop](https://github.com/peterjc/biopython_workshop)
-
-### Notebook/Markdown exercises
-
-The notebooks can be inspected online with the NBViewer and MarkDown links below
-
-* **ex01:** [%GC content and genome size](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex01_gc_content.ipynb)
-* **ex02:** [k-mer spectra](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex02_kmer_spectra.ipynb)
-* **ex03:** [average nucleotide identity (ANI)](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex03_ani.ipynb)
-* **ex04:** [pairwise genome alignment](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/whole_genome_alignment/whole_genome_alignments_A.md)
-* **ex05:** [multiple genome alignment](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/whole_genome_alignment/whole_genome_alignments_B.md)
-* **ex06:** [visualisation in Biopython](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex06_biopython_visualisation.ipynb)
-* **ex07:** [bacterial gene prediction](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/predict_CDS/bacterial_CDS_prediction.md)
-* **ex08:** [finding reciprocal best blast hits (RBBH)](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex08_find_rbbh.ipynb)
-* **ex09a:** [finding MCL orthologues (MarkDown)](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/mcl_orthologues/ex09a_mcl_orthologues.md)
-* **ex09b:** [finding MCL orthologues (iPython)](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/mcl_orthologues/ex09b_mcl_orthologues.ipynb)
-* **ex10a:** [finding synteny with i-ADHoRe](https://github.com/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/i-ADHoRe/ex10a_i-ADHoRe.md)
-* **ex10b:** [visualising synteny with i-ADHoRe](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/i-ADHoRe/ex10b_i-ADHoRe.ipynb)
-* **ex11:** [visualising the two-speed genome](http://nbviewer.ipython.org/github/widdowquinn/Teaching-2015-03-17-UoD_compgenvis/blob/master/exercises/ex11_pi_two_speed.ipynb)
+You will be able to read the HTML sessions in your browser, but the work for these will be done largely in the terminal or standalone applications.
 
 ## Licensing
 
 ### Presentation
 
-The presentation is licensed under the Creative Commons Attribution ShareAlike license: 
+The presentation/lecture components are licensed under the Creative Commons Attribution ShareAlike license: 
 
 * [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)
 
@@ -116,7 +100,7 @@ summarised below
 
 Unless otherwise indicated, all code is subject to the following agreement:
 
-    (c) The James Hutton Institute 2014, 2015
+    (c) The James Hutton Institute 2014-2016
     Author: Leighton Pritchard
 
     Contact: leighton.pritchard@hutton.ac.uk
@@ -128,13 +112,13 @@ Unless otherwise indicated, all code is subject to the following agreement:
     Errol Road,
     Invergowrie,
     Dundee,
-    DD6 9LH,
+    DD2 5DA,
     Scotland,
     UK
 
 The MIT License
 
-Copyright (c) 2014-2015 The James Hutton Institute
+Copyright (c) 2014-2016 The James Hutton Institute
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
