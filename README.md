@@ -1,8 +1,8 @@
-# README.md - Teaching-UoD-Comparative-Genomics-Visualisation
+# README.md - BS32010 University of Dundee
 
 ## Overview
 
-This repository contains teaching materials used in delivering the BS32010 bioinformatics course lecture and workshops on "Comparative Genome Analysis and Visualisation" at the University of Dundee, 2016
+This repository contains teaching materials used in delivering the BS32010 bioinformatics course lecture and workshops on "Comparative Genome Analysis and Visualisation" at the University of Dundee, March 2016
 
 The format has changed since 2015, and now takes the form of:
 
@@ -10,6 +10,8 @@ The format has changed since 2015, and now takes the form of:
 * Two workshops (2hr each)
 
 The lecture notes and slides can be found in the `lecture` subdirectory, and the material for the workshops can be found in `workshop_1` and `workshop_2`.
+
+
 
 ## Getting Started
 
@@ -23,10 +25,18 @@ $ git clone https://github.com/widdowquinn/Teaching-Dundee-BS32010
 
 The exercises and examples have been written, and are known to run, with the following software, but they may also run happily on other versions:
 
+* `Python` 3.5.1
+* `Jupyter` 4.06
+* `Biopython` 1.66
+* `Pandas` 0.17.1
+* `i-ADHoRe` 3.0.01
+* `NCBI BLAST` 2.2.31+
+* `MUMmer` 3.23
+* `MCL` 14-137
 
-## Executing iPython notebooks
+## Executing notebooks
 
-To start iPython in a suitable form in your browser, execute
+To start the notebooks in your browser, execute
 
 ```
 $ jupyter notebook
@@ -34,6 +44,7 @@ $ jupyter notebook
 
 at the command-line. 
 
+You will be able to read the HTML sessions in your browser, but the work for these will be done largely in the terminal or standalone applications.
 
 ## Licensing
 
