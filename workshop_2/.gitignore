@@ -1,0 +1,3 @@
+# Exclude session 06 output
+rbbh_data/rbbh_output/NC_013421_vs_NC_010694.tab
+NC_004547_vs_NC_010694.crunch
