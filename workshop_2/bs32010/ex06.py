@@ -150,7 +150,8 @@ def read_genbank(*filenames):
             # Reconstruct the name in the corresponding .fna file
             record_name = '|'.join(["gi", record.annotations['gi'],
                                     "ref", record.id])
-            for ft in [f for f in record.features if f.type == "CDS"]:
+            for ft in [f for f in record.features if f.type == "CDS" and 
+                       "protein_id" in f.qualifiers]:
                 ft_dict[ft.qualifiers['protein_id'][0]] = \
                     (record_name, int(ft.location.start), 
                      int(ft.location.end), ft.location.strand)
