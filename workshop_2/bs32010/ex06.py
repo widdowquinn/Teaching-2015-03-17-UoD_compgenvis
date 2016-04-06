@@ -168,8 +168,18 @@ def split_seqid(seqid):
 # Function to write a single line of a Pandas RBBH dataframe to file
 def write_line(line, features, fh):
     """Write a single RBBH dataframe line to a file."""
-    ft1 = features[split_seqid(line['query_id_x'])]
-    ft2 = features[split_seqid(line['subject_id_x'])]
+    try:
+        ft1 = features[split_seqid(line['query_id_x'])]
+    except:
+        print("Could not find feature for %s (skipping)" %
+              line['query_id_x'])
+        return
+    try:
+        ft2 = features[split_seqid(line['subject_id_x'])]
+    except:
+        print("Could not find feature for %s (skipping)" %
+              line['subject_id_x'])
+        return
     fh.write(' '.join([str(line['bitscore_x']),
                        str(line['percentage_identity_x']),
                        str(ft1[2]) if ft1[3] < 0 else str(ft1[1]),
@@ -178,7 +188,7 @@ def write_line(line, features, fh):
                        str(ft2[2]) if ft2[3] < 0 else str(ft2[1]),
                        str(ft2[1]) if ft2[3] < 0 else str(ft2[2]),
                        str(ft2[0])
-                       ]) + '\n')
+                   ]) + '\n')
 
 # Function to write .crunch output for ACT visualisation, from the
 # RBBH identified above
