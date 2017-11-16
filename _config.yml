@@ -1,0 +1,8 @@
+title: Teaching-2015-03-17-uod compgenvis
+description: Files for the University of Dundee Comparative Genomics and Visualisation lectures 2015, part 1
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
